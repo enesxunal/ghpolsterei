@@ -1,0 +1,27 @@
+[
+  {
+    "viewport": "http",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "issues": [],
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "galleryImageCount": 12
+  },
+  {
+    "viewport": "1440x1200-lightbox",
+    "issues": []
+  },
+  {
+    "issues": [],
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "galleryImageCount": 12
+  },
+  {
+    "viewport": "390x844-lightbox",
+    "issues": []
+  }
+]

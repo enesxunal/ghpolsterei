@@ -1,0 +1,229 @@
+[
+  {
+    "viewport": "http:/",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/ueber-uns",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/neu-bezug-von-polstermoebeln",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/cabrio-neu-beziehen",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/aufpolstern",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/markisen",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/neubau-restaurierung-gastronomie-sitzbaenke",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/sattlerei-autositze",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/projekte",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/kontakt",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/impressum",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/datenschutz",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:unknown",
+    "status": 404,
+    "issues": []
+  },
+  {
+    "viewport": "http:/hello-world",
+    "status": 410,
+    "issues": []
+  },
+  {
+    "viewport": "redirect:/leistungsangebot",
+    "status": 308,
+    "location": "/leistungen",
+    "issues": []
+  },
+  {
+    "viewport": "http:/sitemap.xml",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "headers:/",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/robots.txt",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "meta:/",
+    "title": "GH Polsterei | Sattlerei — Polstermöbel &amp; Sattlerarbeiten in Wesseling",
+    "description": "GH Polsterei in Wesseling: Polstermöbel neu beziehen, Aufpolstern, Gastronomie-Sitzbänke, Markisen, Cabrio-Verdecke und Autositze. Handwerksbetrieb — A. Ghoul.",
+    "canonical": "https://ghpolsterei.de",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/ueber-uns",
+    "title": "Über GH Polsterei | Polsterei &amp; Sattlerei Wesseling",
+    "description": "GH Polsterei in Wesseling: Werkstatt für Polster- und Sattlerarbeiten an Möbeln und Fahrzeugen. Persönliche Beratung durch Inhaber Abdalrazak Ghoul.",
+    "canonical": "https://ghpolsterei.de/ueber-uns",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/leistungen",
+    "title": "Leistungen — Polsterei &amp; Sattlerei in Wesseling",
+    "description": "Polstermöbel neu beziehen, Aufpolstern, Gastronomie-Sitzbänke, Markisen, Cabrio-Verdecke und Autositze: alle Leistungen der GH Polsterei in Wesseling im Überblick.",
+    "canonical": "https://ghpolsterei.de/leistungen",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/leistungen/neu-bezug-von-polstermoebeln",
+    "title": "Polstermöbel neu beziehen in Wesseling",
+    "description": "Polstermöbel professionell neu beziehen in Wesseling: Stoff- und Lederbezüge, passgenaue Verarbeitung und sorgfältige Restaurierung bei GH Polsterei.",
+    "canonical": "https://ghpolsterei.de/leistungen/neu-bezug-von-polstermoebeln",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/leistungen/cabrio-neu-beziehen",
+    "title": "Cabrio-Verdeck neu beziehen — Sattlerei Wesseling",
+    "description": "Cabrio-Verdecke fachgerecht neu beziehen und restaurieren in Wesseling. Maßanfertigung und Sattlerarbeit für offene Fahrzeuge bei GH Polsterei.",
+    "canonical": "https://ghpolsterei.de/leistungen/cabrio-neu-beziehen",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/leistungen/aufpolstern",
+    "title": "Möbel aufpolstern in Wesseling",
+    "description": "Möbel und Sitzpolster professionell aufpolstern in Wesseling. Mehr Komfort und Form für Sessel, Sofas und Sitzmöbel — GH Polsterei.",
+    "canonical": "https://ghpolsterei.de/leistungen/aufpolstern",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/leistungen/markisen",
+    "title": "Markisen &amp; Planen — Restaurierung in Wesseling",
+    "description": "Markisen restaurieren und Planen für LKW und Anhänger in Wesseling. Textile Lösungen und Sattlerarbeit von GH Polsterei.",
+    "canonical": "https://ghpolsterei.de/leistungen/markisen",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/leistungen/neubau-restaurierung-gastronomie-sitzbaenke",
+    "title": "Gastronomie-Sitzbänke — Neubau &amp; Restaurierung Wesseling",
+    "description": "Gastronomie-Sitzbänke maßgeschneidert neu bauen oder restaurieren in Wesseling. Robuste Polsterlösungen für Restaurants und Cafés — GH Polsterei.",
+    "canonical": "https://ghpolsterei.de/leistungen/neubau-restaurierung-gastronomie-sitzbaenke",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/leistungen/sattlerei-autositze",
+    "title": "Autositze neu beziehen — Sattlerei Wesseling",
+    "description": "Autositze fachgerecht neu beziehen und restaurieren in Wesseling. Sattlerarbeit für Fahrzeugsitze — Leder und Stoff bei GH Polsterei.",
+    "canonical": "https://ghpolsterei.de/leistungen/sattlerei-autositze",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/projekte",
+    "title": "Projekte — Polster- &amp; Sattlerarbeiten",
+    "description": "Referenzprojekte der GH Polsterei in Wesseling: Polstermöbel, Gastronomie-Sitzbänke, Autositze und mehr — Handwerksqualität aus der Werkstatt.",
+    "canonical": "https://ghpolsterei.de/projekte",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/kontakt",
+    "title": "Kontakt &amp; Angebot anfragen | GH Polsterei Wesseling",
+    "description": "Kontaktieren Sie GH Polsterei in Wesseling: Angebot für Polstermöbel, Autositze, Cabrio-Verdecke und Sattlerarbeiten. Telefon, E-Mail oder Formular.",
+    "canonical": "https://ghpolsterei.de/kontakt",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/impressum",
+    "title": "Impressum | GH Polsterei",
+    "description": "Anbieterkennzeichnung der GH Polsterei, Inhaber Abdalrazak Ghoul, Industriestraße 45, 50389 Wesseling.",
+    "canonical": "https://ghpolsterei.de/impressum",
+    "issues": []
+  },
+  {
+    "viewport": "meta:/datenschutz",
+    "title": "Datenschutzerklärung | GH Polsterei",
+    "description": "Informationen zur Verarbeitung personenbezogener Daten bei GH Polsterei: Kontaktformular, Hosting, Cloudflare Turnstile, Resend und Ihre Rechte nach der DSGVO.",
+    "canonical": "https://ghpolsterei.de/datenschutz",
+    "issues": []
+  },
+  {
+    "viewport": "legal-seo-ueber-uns-1440x1200",
+    "status": 200,
+    "issues": [],
+    "h1": "Handwerk mit Anspruch"
+  },
+  {
+    "viewport": "legal-seo-impressum-1440x1200",
+    "status": 200,
+    "issues": [],
+    "h1": "Anbieterkennzeichnung"
+  },
+  {
+    "viewport": "legal-seo-datenschutz-1440x1200",
+    "status": 200,
+    "issues": [],
+    "h1": "Datenschutzerklärung"
+  },
+  {
+    "viewport": "legal-seo-not-found-1440x1200",
+    "status": 404,
+    "issues": [],
+    "h1": "Diese Seite wurde nicht gefunden."
+  },
+  {
+    "viewport": "legal-seo-ueber-uns-390x844",
+    "status": 200,
+    "issues": [],
+    "h1": "Handwerk mit Anspruch"
+  },
+  {
+    "viewport": "legal-seo-datenschutz-390x844",
+    "status": 200,
+    "issues": [],
+    "h1": "Datenschutzerklärung"
+  },
+  {
+    "viewport": "kontakt-privacy-link",
+    "issues": []
+  }
+]

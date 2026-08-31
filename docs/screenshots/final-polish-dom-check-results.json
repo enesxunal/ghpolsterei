@@ -1,0 +1,155 @@
+[
+  {
+    "viewport": "home-1440x1200",
+    "issues": [],
+    "h1": "Polsterei & Sattlerei in Wesseling",
+    "scrollY": 0,
+    "headerPosition": "sticky",
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-home-1440x1200.png"
+  },
+  {
+    "viewport": "leistungen-1440x1200",
+    "issues": [],
+    "h1": "Leistungen der GH Polsterei",
+    "scrollY": 0,
+    "headerPosition": "sticky",
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-leistungen-1440x1200.png"
+  },
+  {
+    "viewport": "leistungen-neu-bezug-1440x1200",
+    "issues": [],
+    "h1": "Polstermöbel neu beziehen",
+    "scrollY": 0,
+    "headerPosition": "sticky",
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-leistungen-neu-bezug-1440x1200.png"
+  },
+  {
+    "viewport": "projekte-1440x1200",
+    "issues": [],
+    "h1": "Unsere Projekte",
+    "scrollY": 0,
+    "headerPosition": "sticky",
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-projekte-1440x1200.png"
+  },
+  {
+    "viewport": "kontakt-1440x1200",
+    "issues": [],
+    "h1": "Ihr Projekt. Unsere Handarbeit.",
+    "scrollY": 0,
+    "headerPosition": "sticky",
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-kontakt-1440x1200.png"
+  },
+  {
+    "viewport": "home-390x844",
+    "issues": [],
+    "h1": "Polsterei & Sattlerei in Wesseling",
+    "scrollY": 0,
+    "headerPosition": "static",
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-home-390x844.png"
+  },
+  {
+    "viewport": "leistungen-390x844",
+    "issues": [],
+    "h1": "Leistungen der GH Polsterei",
+    "scrollY": 0,
+    "headerPosition": "static",
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-leistungen-390x844.png"
+  },
+  {
+    "viewport": "projekte-390x844",
+    "issues": [],
+    "h1": "Unsere Projekte",
+    "scrollY": 0,
+    "headerPosition": "static",
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-projekte-390x844.png"
+  },
+  {
+    "viewport": "kontakt-390x844",
+    "issues": [],
+    "h1": "Ihr Projekt. Unsere Handarbeit.",
+    "scrollY": 0,
+    "headerPosition": "static",
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/final-polish-kontakt-390x844.png"
+  }
+]

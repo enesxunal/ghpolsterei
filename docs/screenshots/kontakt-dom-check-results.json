@@ -1,0 +1,123 @@
+[
+  {
+    "viewport": "http:/kontakt",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "kontakt-1440x1200",
+    "issues": [],
+    "h1": "Ihr Projekt. Unsere Handarbeit.",
+    "title": "Kontakt & Angebot anfragen | GH Polsterei Wesseling",
+    "labels": [
+      "Website",
+      "Name",
+      "E-Mail",
+      "Telefon",
+      "Leistung / Anliegen",
+      "Nachricht",
+      "Fotos (optional)",
+      "Ich habe die Datenschutzerklärung zur Kenntnis genommen."
+    ],
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "kontakt-390x844",
+    "issues": [],
+    "h1": "Ihr Projekt. Unsere Handarbeit.",
+    "title": "Kontakt & Angebot anfragen | GH Polsterei Wesseling",
+    "labels": [
+      "Website",
+      "Name",
+      "E-Mail",
+      "Telefon",
+      "Leistung / Anliegen",
+      "Nachricht",
+      "Fotos (optional)",
+      "Ich habe die Datenschutzerklärung zur Kenntnis genommen."
+    ],
+    "scrollWidth": 390,
+    "innerWidth": 390
+  },
+  {
+    "viewport": "client-required-validation",
+    "issues": []
+  },
+  {
+    "viewport": "client-email-or-phone",
+    "issues": []
+  },
+  {
+    "viewport": "client-invalid-email",
+    "issues": []
+  },
+  {
+    "viewport": "client-privacy",
+    "issues": []
+  },
+  {
+    "viewport": "client-loading-and-success",
+    "issues": []
+  },
+  {
+    "viewport": "client-five-optimized",
+    "issues": []
+  },
+  {
+    "viewport": "client-large-jpeg-optimize",
+    "issues": [],
+    "largeSize": 7356351
+  },
+  {
+    "viewport": "client-reject-over-8mb",
+    "issues": []
+  },
+  {
+    "viewport": "client-reject-six-files",
+    "issues": []
+  },
+  {
+    "viewport": "client-reject-pdf",
+    "issues": []
+  },
+  {
+    "viewport": "client-compression-failure",
+    "issues": []
+  },
+  {
+    "viewport": "api-invalid-file-type",
+    "status": 400,
+    "issues": []
+  },
+  {
+    "viewport": "api-large-file",
+    "status": 400,
+    "issues": []
+  },
+  {
+    "viewport": "api-payload-bypass",
+    "status": 413,
+    "issues": []
+  },
+  {
+    "viewport": "api-magic-mismatch",
+    "status": 400,
+    "issues": []
+  },
+  {
+    "viewport": "api-max-file-count",
+    "status": 400,
+    "issues": []
+  },
+  {
+    "viewport": "api-honeypot",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "api-time-trap",
+    "status": 400,
+    "issues": []
+  }
+]

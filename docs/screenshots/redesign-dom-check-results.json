@@ -1,0 +1,374 @@
+[
+  {
+    "viewport": "home-1440x1200",
+    "issues": [],
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "darkButtonCount": 22,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Kontakt aufnehmen",
+      "Leistungen ansehen",
+      "Alle Projekte",
+      "0163 / 6924387",
+      "E-Mail schreiben",
+      "Kontaktseite",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-home-1440x1200.png"
+  },
+  {
+    "viewport": "leistungen-1440x1200",
+    "issues": [],
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "darkButtonCount": 19,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "Projekt anfragen",
+      "0163 / 6924387",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-leistungen-1440x1200.png"
+  },
+  {
+    "viewport": "leistungen-neu-bezug-1440x1200",
+    "issues": [],
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "darkButtonCount": 21,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "Leistungen",
+      "Zu den Projekten",
+      "Projekt anfragen",
+      "0163 / 6924387",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-leistungen-neu-bezug-1440x1200.png"
+  },
+  {
+    "viewport": "leistungen-cabrio-1440x1200",
+    "issues": [],
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "darkButtonCount": 21,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "Leistungen",
+      "Zu den Projekten",
+      "Projekt anfragen",
+      "0163 / 6924387",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-leistungen-cabrio-1440x1200.png"
+  },
+  {
+    "viewport": "projekte-1440x1200",
+    "issues": [],
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "darkButtonCount": 18,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "Kontakt aufnehmen",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-projekte-1440x1200.png"
+  },
+  {
+    "viewport": "kontakt-1440x1200",
+    "issues": [],
+    "headerLogo": {
+      "width": 110,
+      "height": 80
+    },
+    "footerLogo": {
+      "width": 138,
+      "height": 100
+    },
+    "darkButtonCount": 21,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Jetzt anrufen",
+      "WhatsApp schreiben",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-kontakt-1440x1200.png"
+  },
+  {
+    "viewport": "home-390x844",
+    "issues": [],
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "darkButtonCount": 22,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Kontakt aufnehmen",
+      "Leistungen ansehen",
+      "Alle Projekte",
+      "0163 / 6924387",
+      "E-Mail schreiben",
+      "Kontaktseite",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-home-390x844.png"
+  },
+  {
+    "viewport": "leistungen-390x844",
+    "issues": [],
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "darkButtonCount": 19,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "Projekt anfragen",
+      "0163 / 6924387",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-leistungen-390x844.png"
+  },
+  {
+    "viewport": "projekte-390x844",
+    "issues": [],
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "darkButtonCount": 18,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "Kontakt aufnehmen",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-projekte-390x844.png"
+  },
+  {
+    "viewport": "kontakt-390x844",
+    "issues": [],
+    "headerLogo": {
+      "width": 83,
+      "height": 60
+    },
+    "footerLogo": {
+      "width": 118,
+      "height": 86
+    },
+    "darkButtonCount": 21,
+    "darkButtonLabels": [
+      "GH Polsterei",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Anrufen",
+      "Menü",
+      "Startseite",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Jetzt anrufen",
+      "WhatsApp schreiben",
+      "0163 / 6924387",
+      "gh.polsterei@gmail.com",
+      "Home",
+      "Über uns",
+      "Leistungen",
+      "Projekte",
+      "Kontakt",
+      "Impressum",
+      "Datenschutz"
+    ],
+    "status": 200,
+    "file": "/Users/enesxunal/Desktop/3 Kare Ajans/Cursor/ghpolsterei/docs/screenshots/redesign-kontakt-390x844.png"
+  }
+]

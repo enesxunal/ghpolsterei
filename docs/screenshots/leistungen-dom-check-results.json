@@ -1,0 +1,169 @@
+[
+  {
+    "viewport": "http:/leistungen",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/neu-bezug-von-polstermoebeln",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/cabrio-neu-beziehen",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/aufpolstern",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/markisen",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/neubau-restaurierung-gastronomie-sitzbaenke",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "http:/leistungen/sattlerei-autositze",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "redirect:http://localhost:3014/leistungsangebot/",
+    "chain": [
+      {
+        "url": "http://localhost:3014/leistungsangebot/",
+        "status": 308,
+        "location": "/leistungsangebot"
+      },
+      {
+        "url": "http://localhost:3014/leistungsangebot",
+        "status": 308,
+        "location": "/leistungen"
+      },
+      {
+        "url": "http://localhost:3014/leistungen",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalPath": "/leistungen",
+    "issues": []
+  },
+  {
+    "viewport": "redirect:http://localhost:3014/leistungsangebot",
+    "chain": [
+      {
+        "url": "http://localhost:3014/leistungsangebot",
+        "status": 308,
+        "location": "/leistungen"
+      },
+      {
+        "url": "http://localhost:3014/leistungen",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalPath": "/leistungen",
+    "issues": []
+  },
+  {
+    "viewport": "leistungen-1440x1200",
+    "issues": [],
+    "title": "Leistungen — Polsterei & Sattlerei in Wesseling",
+    "metaDescription": "Polstermöbel neu beziehen, Aufpolstern, Gastronomie-Sitzbänke, Markisen, Cabrio-Verdecke und Autositze: alle Leistungen der GH Polsterei in Wesseling im Überblick.",
+    "h1": "Leistungen der GH Polsterei",
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "leistungen-390x844",
+    "issues": [],
+    "title": "Leistungen — Polsterei & Sattlerei in Wesseling",
+    "metaDescription": "Polstermöbel neu beziehen, Aufpolstern, Gastronomie-Sitzbänke, Markisen, Cabrio-Verdecke und Autositze: alle Leistungen der GH Polsterei in Wesseling im Überblick.",
+    "h1": "Leistungen der GH Polsterei",
+    "scrollWidth": 390,
+    "innerWidth": 390
+  },
+  {
+    "viewport": "neu-bezug-von-polstermoebeln-1440x1200",
+    "issues": [],
+    "title": "Polstermöbel neu beziehen in Wesseling",
+    "metaDescription": "Polstermöbel professionell neu beziehen in Wesseling: Stoff- und Lederbezüge, passgenaue Verarbeitung und sorgfältige Restaurierung bei GH Polsterei.",
+    "h1": "Polstermöbel neu beziehen",
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "neu-bezug-von-polstermoebeln-390x844",
+    "issues": [],
+    "title": "Polstermöbel neu beziehen in Wesseling",
+    "metaDescription": "Polstermöbel professionell neu beziehen in Wesseling: Stoff- und Lederbezüge, passgenaue Verarbeitung und sorgfältige Restaurierung bei GH Polsterei.",
+    "h1": "Polstermöbel neu beziehen",
+    "scrollWidth": 390,
+    "innerWidth": 390
+  },
+  {
+    "viewport": "cabrio-neu-beziehen-1440x1200",
+    "issues": [],
+    "title": "Cabrio-Verdeck neu beziehen — Sattlerei Wesseling",
+    "metaDescription": "Cabrio-Verdecke fachgerecht neu beziehen und restaurieren in Wesseling. Maßanfertigung und Sattlerarbeit für offene Fahrzeuge bei GH Polsterei.",
+    "h1": "Cabrioverdecke neu beziehen",
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "aufpolstern-dom-only",
+    "issues": [],
+    "title": "Möbel aufpolstern in Wesseling",
+    "metaDescription": "Möbel und Sitzpolster professionell aufpolstern in Wesseling. Mehr Komfort und Form für Sessel, Sofas und Sitzmöbel — GH Polsterei.",
+    "h1": "Möbel aufpolstern",
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "markisen-dom-only",
+    "issues": [],
+    "title": "Markisen & Planen — Restaurierung in Wesseling",
+    "metaDescription": "Markisen restaurieren und Planen für LKW und Anhänger in Wesseling. Textile Lösungen und Sattlerarbeit von GH Polsterei.",
+    "h1": "Markisen & Planen",
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "neubau-restaurierung-gastronomie-sitzbaenke-dom-only",
+    "issues": [],
+    "title": "Gastronomie-Sitzbänke — Neubau & Restaurierung Wesseling",
+    "metaDescription": "Gastronomie-Sitzbänke maßgeschneidert neu bauen oder restaurieren in Wesseling. Robuste Polsterlösungen für Restaurants und Cafés — GH Polsterei.",
+    "h1": "Gastronomie-Sitzbänke: Neubau & Restaurierung",
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "sattlerei-autositze-dom-only",
+    "issues": [],
+    "title": "Autositze neu beziehen — Sattlerei Wesseling",
+    "metaDescription": "Autositze fachgerecht neu beziehen und restaurieren in Wesseling. Sattlerarbeit für Fahrzeugsitze — Leder und Stoff bei GH Polsterei.",
+    "h1": "Autositze neu beziehen & restaurieren",
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  {
+    "viewport": "homepage-service-links",
+    "hrefs": [
+      "/leistungen/neu-bezug-von-polstermoebeln",
+      "/leistungen/cabrio-neu-beziehen",
+      "/leistungen/aufpolstern",
+      "/leistungen/markisen",
+      "/leistungen/neubau-restaurierung-gastronomie-sitzbaenke",
+      "/leistungen/sattlerei-autositze"
+    ],
+    "issues": []
+  }
+]

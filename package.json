@@ -6,12 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "qa:homepage": "node scripts/visual-qa.mjs",
+    "qa:leistungen": "node scripts/visual-qa-leistungen.mjs",
+    "qa:kontakt": "node scripts/visual-qa-kontakt.mjs",
+    "qa:projekte": "node scripts/visual-qa-projekte.mjs",
+    "qa:redesign": "node scripts/visual-qa-redesign.mjs",
+    "qa:final": "node scripts/visual-qa-final-polish.mjs",
+    "qa:legal": "node scripts/visual-qa-legal-seo.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,6 +28,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.3",
+    "playwright": "^1.62.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
