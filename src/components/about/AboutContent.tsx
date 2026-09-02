@@ -49,10 +49,10 @@ export function AboutContent() {
                 {aboutPage.intro}
               </p>
             </div>
-            <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:col-span-6 lg:aspect-[5/4] xl:col-span-7">
+            <div className="relative aspect-square overflow-hidden lg:col-span-6 xl:col-span-7">
               <Image
-                src="/images/projects/4.jpg"
-                alt="Polsterarbeit aus der Werkstatt der GH Polsterei"
+                src="/images/projects/customer-2026/ohrensessel-lederrestaurierung.jpg"
+                alt="Restaurierter Polstersessel im Vergleich zum ursprünglichen Zustand"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -4,12 +4,12 @@ import { homepage } from "@/data/homepage";
 import { site } from "@/data/site";
 
 const reasonIcons: Record<(typeof site.trustReasons)[number], ReactNode> = {
-  "Hochwertiges Material": <MaterialIcon />,
-  Zertifikat: <CertificateIcon />,
+  "Hochwertige Materialien": <MaterialIcon />,
+  "Zertifizierter Fachbetrieb": <CertificateIcon />,
   "Sorgfältige Ausführung": <CraftIcon />,
-  "Zeitliche Verfügbarkeit": <ClockIcon />,
-  "Schnelle Antwort": <PhoneIcon />,
-  Lieferservice: <DeliveryIcon />,
+  "Termintreue Fertigstellung": <ClockIcon />,
+  "Schnelle Rückmeldung": <ReplyIcon />,
+  "Abhol- und Lieferservice auf Wunsch": <DeliveryIcon />,
 };
 
 export function TrustStrip() {
@@ -39,7 +39,7 @@ export function TrustStrip() {
               id="advantages-heading"
               className="mt-3 font-serif text-[1.65rem] font-semibold leading-[1.12] text-dark sm:text-3xl"
             >
-              Sechs Gründe
+              Sechs Gründe, warum Kunden uns wählen
             </h2>
           </div>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
@@ -103,13 +103,12 @@ function ClockIcon() {
   );
 }
 
-function PhoneIcon() {
+function ReplyIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-5 w-5">
-      <path
-        d="M8 5.5h3.2l.8 2.2-1.6 1.1a11 11 0 0 0 5.8 5.8l1.1-1.6 2.2.8V16a1.5 1.5 0 0 1-1.5 1.5A12.5 12.5 0 0 1 6.5 5.5 1.5 1.5 0 0 1 8 4"
-        strokeLinejoin="miter"
-      />
+      <path d="M5 12h11.5" strokeLinecap="square" />
+      <path d="M5 12 9 8M5 12l4 4" strokeLinecap="square" />
+      <path d="M19 7v10" strokeLinecap="square" />
     </svg>
   );
 }

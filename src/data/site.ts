@@ -31,12 +31,12 @@ export const site = {
     { label: "Kontakt", href: "/kontakt" },
   ],
   trustReasons: [
-    "Hochwertiges Material",
-    "Zertifikat",
+    "Hochwertige Materialien",
+    "Zertifizierter Fachbetrieb",
     "Sorgfältige Ausführung",
-    "Zeitliche Verfügbarkeit",
-    "Schnelle Antwort",
-    "Lieferservice",
+    "Termintreue Fertigstellung",
+    "Schnelle Rückmeldung",
+    "Abhol- und Lieferservice auf Wunsch",
   ],
   servicesIntro:
     "Experte für hochwertige und maßgeschneiderte Innenausstattung; Möbel erneuern/restaurieren; gastronomische Sitzbänke; Sattlerarbeiten für Autositze und Cabrios.",
