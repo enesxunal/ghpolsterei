@@ -5,24 +5,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { homepage } from "@/data/homepage";
 import { services } from "@/data/services";
 
-const editorialLayout = [
-  "sm:col-span-2 lg:col-span-7",
-  "sm:col-span-2 lg:col-span-5",
-  "lg:col-span-4",
-  "lg:col-span-4",
-  "lg:col-span-4",
-  "sm:col-span-2 lg:col-span-6 lg:col-start-4",
-] as const;
-
-const imageAspect = [
-  "aspect-[16/10] sm:aspect-[5/3]",
-  "aspect-[16/10] sm:aspect-[4/3]",
-  "aspect-[16/10]",
-  "aspect-[16/10]",
-  "aspect-[16/10]",
-  "aspect-[16/10] sm:aspect-[21/9]",
-] as const;
-
 export function ServicesSection() {
   const { leistungen } = homepage;
 
@@ -36,25 +18,16 @@ export function ServicesSection() {
           intro={leistungen.intro}
         />
 
-        <ul className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-14 lg:grid-cols-12">
-          {services.map((service, index) => (
-            <li
-              key={service.id}
-              className={`group flex min-w-0 flex-col ${editorialLayout[index] ?? ""}`}
-            >
-              <div className={`relative overflow-hidden ${imageAspect[index] ?? "aspect-[16/10]"}`}>
+        <ul className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
+          {services.map((service) => (
+            <li key={service.id} className="group flex min-w-0 flex-col">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.name}
                   fill
                   className="object-cover object-center transition-[transform,filter] duration-500 group-hover:brightness-[1.02] motion-reduce:transition-none"
-                  sizes={
-                    index === 0
-                      ? "(max-width: 1024px) 100vw, 58vw"
-                      : index === 1
-                        ? "(max-width: 1024px) 100vw, 42vw"
-                        : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  }
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className="flex flex-1 flex-col border-t border-gold/70 pt-4 sm:pt-5">

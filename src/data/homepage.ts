@@ -10,7 +10,7 @@ export const homepage = {
   },
   trustBand: [
     "Polsterei in Wesseling",
-    "Persönliche Beratung",
+    "Kostenlose Beratung",
     "Möbel & Fahrzeuge",
     "Saubere Handarbeit",
   ] as const,
@@ -55,7 +55,7 @@ export const homepage = {
         number: "03",
         title: "Übergabe & Lieferservice",
         description:
-          "Mo – Sa: 09:00 – 17:00 Uhr — Abholung in Wesseling oder Lieferservice nach Vereinbarung.",
+          "Mo – Fr: 09:00 – 17:00 Uhr, Samstag nach Absprache. Abhol-/Lieferservice nach Absprache.",
       },
     ],
   },

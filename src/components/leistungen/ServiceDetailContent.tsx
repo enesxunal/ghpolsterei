@@ -129,6 +129,41 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </Container>
       </section>
 
+      {service.workshopImages && service.workshopImages.length > 0 ? (
+        <section
+          aria-labelledby="workshop-insights-heading"
+          className="bg-surface py-12 sm:py-16 lg:py-20"
+        >
+          <Container>
+            <div className="max-w-2xl">
+              <p className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold-dark sm:text-[0.8125rem]">
+                Werkstatt
+              </p>
+              <h2
+                id="workshop-insights-heading"
+                className="mt-3 font-serif text-2xl font-semibold text-navy sm:text-3xl"
+              >
+                Einblicke aus der Werkstatt
+              </h2>
+            </div>
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+              {service.workshopImages.map((image) => (
+                <li key={image.src} className="min-w-0 overflow-hidden">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    className="h-auto w-full"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      ) : null}
+
       <section
         aria-labelledby="service-process-heading"
         className="bg-navy py-12 text-ivory sm:py-16 lg:py-20"

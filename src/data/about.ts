@@ -17,7 +17,7 @@ export const aboutPage = {
     paragraphs: [
       `Unsere Werkstatt liegt in der ${site.address.street} in ${site.address.postalCode} ${site.address.city}. Von hier aus betreuen wir Anfragen zu Polstermöbeln, Gastronomie-Sitzbänken und Sattlerarbeiten für Fahrzeuge.`,
       `Inhaber ist ${site.owner}. Beratung, Abstimmung und Ausführung laufen direkt über die Werkstatt — telefonisch, per E-Mail oder vor Ort nach Vereinbarung.`,
-      `${site.openingHours}. Abholung in Wesseling oder Lieferung nach Absprache.`,
+      "Mo – Fr: 09:00–17:00 Uhr, Sa: nach Absprache. Abhol-/Lieferservice nach Absprache.",
     ],
   },
   craft: {
@@ -53,7 +53,7 @@ export const aboutPage = {
         number: "03",
         title: "Übergabe",
         description:
-          "Die Fertigstellung erfolgt nach Vereinbarung. Abholung in der Werkstatt oder Lieferung, soweit abgesprochen.",
+          "Die Fertigstellung erfolgt nach Vereinbarung. Abhol-/Lieferservice nach Absprache.",
       },
     ],
   },

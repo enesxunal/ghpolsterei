@@ -157,7 +157,7 @@ async function runDomChecks(page, viewport) {
     const mailto = [...document.querySelectorAll('a[href^="mailto:"]')].map(
       (a) => a.getAttribute("href") ?? "",
     );
-    if (!mailto.some((href) => href === "mailto:gh.polsterei@gmail.com")) {
+    if (!mailto.some((href) => href === "mailto:info@ghpolsterei.de")) {
       issues.push(
         `mailto: href missing or wrong: ${mailto.join(", ") || "none"}`,
       );

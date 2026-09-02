@@ -10,13 +10,17 @@ export const site = {
   },
   phone: "0163 6924387",
   phoneFormatted: "0163 / 6924387",
-  email: "gh.polsterei@gmail.com",
+  email: "info@ghpolsterei.de",
   website: "https://ghpolsterei.de",
   businessType: "Handwerksbetrieb",
   chamber: "Handwerkskammer zu Köln",
   tradeRegisterNo: "1234150",
   vatId: "DE364438920",
-  openingHours: "Mo – Sa: 09:00 – 17:00 Uhr",
+  openingHoursLines: [
+    "Mo – Fr: 09:00 – 17:00 Uhr",
+    "Sa: nach Absprache",
+  ] as const,
+  openingHours: "Mo – Fr: 09:00 – 17:00 Uhr · Sa: nach Absprache",
   googleMapsQuery: "GH Polsterei",
   copyright: "© 2026 GH Polsterei | Sattlerei",
   navigation: [
@@ -28,7 +32,7 @@ export const site = {
   ],
   trustReasons: [
     "Hochwertiges Material",
-    "Handwerksrolle Köln",
+    "Zertifikat",
     "Sorgfältige Ausführung",
     "Zeitliche Verfügbarkeit",
     "Schnelle Antwort",

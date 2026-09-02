@@ -7,6 +7,7 @@ import { BreadcrumbNav } from "@/components/leistungen/BreadcrumbNav";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
+import { OpeningHours } from "@/components/ui/OpeningHours";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { contactAddressLine, contactPage } from "@/data/contact";
 import { site } from "@/data/site";
@@ -145,7 +146,9 @@ export default function KontaktPage() {
                       <dt className="text-[0.75rem] uppercase tracking-[0.16em] text-gold">
                         Öffnungszeiten
                       </dt>
-                      <dd className="mt-1 text-ivory/85">{site.openingHours}</dd>
+                      <dd className="mt-1 text-ivory/85">
+                        <OpeningHours />
+                      </dd>
                     </div>
                   </dl>
 

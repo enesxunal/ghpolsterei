@@ -5,6 +5,7 @@ import { useCallback, useEffect, useSyncExternalStore, useState } from "react";
 import { createPortal } from "react-dom";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Container } from "@/components/ui/Container";
+import { OpeningHours } from "@/components/ui/OpeningHours";
 import { site } from "@/data/site";
 import { getMailtoHref, getTelHref } from "@/lib/links";
 
@@ -148,7 +149,9 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
             >
               {site.email}
             </a>
-            <p className="text-sm leading-relaxed text-ivory/60">{site.openingHours}</p>
+            <p className="text-sm leading-relaxed text-ivory/60">
+              <OpeningHours />
+            </p>
           </div>
         </Container>
       </div>

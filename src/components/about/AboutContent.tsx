@@ -178,7 +178,7 @@ export function AboutContent() {
               <li key={project.id} className="relative aspect-square overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={projectAltText(project.id)}
+                  alt={projectAltText(project)}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 50vw, 25vw"

@@ -17,6 +17,13 @@ export type ServiceLayoutVariant =
   | "wide-image"
   | "narrow-image";
 
+export type ServiceWorkshopImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type Service = {
   id: number;
   slug: string;
@@ -36,6 +43,7 @@ export type Service = {
   };
   relatedServices: string[];
   layoutVariant: ServiceLayoutVariant;
+  workshopImages?: ServiceWorkshopImage[];
   legacyText: string;
 };
 
@@ -116,7 +124,7 @@ export const services: Service[] = [
         {
           title: "Übergabe",
           description:
-            "Abholung in Wesseling nach Vereinbarung — Mo bis Sa, 09:00 bis 17:00 Uhr.",
+            "Übergabe nach Vereinbarung — Abhol-/Lieferservice nach Absprache.",
         },
       ],
     },
@@ -194,6 +202,32 @@ export const services: Service[] = [
     },
     relatedServices: ["sattlerei-autositze", "markisen"],
     layoutVariant: "split-left",
+    workshopImages: [
+      {
+        src: "/images/projects/customer-2026/cabrio-verdeck-werkstatt-01.jpg",
+        alt: "Sattlerarbeit an einem schwarzen Cabrio-Verdeck in der Werkstatt",
+        width: 1024,
+        height: 743,
+      },
+      {
+        src: "/images/projects/customer-2026/cabrio-verdeck-werkstatt-02.jpg",
+        alt: "Prüfung eines Cabrio-Verdecks in der GH Polsterei Werkstatt",
+        width: 1024,
+        height: 760,
+      },
+      {
+        src: "/images/projects/customer-2026/cabrio-verdeck-werkstatt-03.jpg",
+        alt: "Arbeit am Verdeck eines roten Cabrios in der Werkstatt",
+        width: 766,
+        height: 995,
+      },
+      {
+        src: "/images/projects/customer-2026/cabrio-verdeck-werkstatt-04.jpg",
+        alt: "Einbau der Heckscheibe an einem Cabrio-Verdeck",
+        width: 767,
+        height: 995,
+      },
+    ],
     legacyText:
       "Cabrio neu beziehen — Maßgeschneiderte Cabrio-Verdecke. Sattlerarbeiten für Autositze und Cabrios.",
   },
@@ -260,7 +294,7 @@ export const services: Service[] = [
         {
           title: "Fertigstellung",
           description:
-            "Bezug schließen oder Vorbereitung für Neubezug — Abholung in Wesseling.",
+            "Bezug schließen oder Vorbereitung für Neubezug — Abhol-/Lieferservice nach Absprache.",
         },
       ],
     },

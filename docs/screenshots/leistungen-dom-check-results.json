@@ -35,20 +35,20 @@
     "issues": []
   },
   {
-    "viewport": "redirect:http://localhost:3014/leistungsangebot/",
+    "viewport": "redirect:http://localhost:3000/leistungsangebot/",
     "chain": [
       {
-        "url": "http://localhost:3014/leistungsangebot/",
+        "url": "http://localhost:3000/leistungsangebot/",
         "status": 308,
         "location": "/leistungsangebot"
       },
       {
-        "url": "http://localhost:3014/leistungsangebot",
+        "url": "http://localhost:3000/leistungsangebot",
         "status": 308,
         "location": "/leistungen"
       },
       {
-        "url": "http://localhost:3014/leistungen",
+        "url": "http://localhost:3000/leistungen",
         "status": 200,
         "location": null
       }
@@ -57,15 +57,15 @@
     "issues": []
   },
   {
-    "viewport": "redirect:http://localhost:3014/leistungsangebot",
+    "viewport": "redirect:http://localhost:3000/leistungsangebot",
     "chain": [
       {
-        "url": "http://localhost:3014/leistungsangebot",
+        "url": "http://localhost:3000/leistungsangebot",
         "status": 308,
         "location": "/leistungen"
       },
       {
-        "url": "http://localhost:3014/leistungen",
+        "url": "http://localhost:3000/leistungen",
         "status": 200,
         "location": null
       }

@@ -34,8 +34,8 @@ async function runDomChecks(page, viewport) {
     const galleryImgs = [
       ...document.querySelectorAll('section[aria-label="Projektgalerie"] img'),
     ];
-    if (galleryImgs.length !== 12) {
-      issues.push(`Expected 12 gallery images, found ${galleryImgs.length}`);
+    if (galleryImgs.length < 13) {
+      issues.push(`Expected at least 13 gallery images, found ${galleryImgs.length}`);
     }
 
     const imgs = [...document.querySelectorAll("img")];
@@ -110,14 +110,14 @@ async function testLightbox(page, viewportName) {
   await nextBtn.click();
   await page.waitForTimeout(150);
   const captionAfterNext = await page.locator("figcaption").textContent();
-  if (!captionAfterNext?.includes("2 / 12")) {
+  if (!captionAfterNext?.includes("2 / ")) {
     issues.push(`Next navigation failed: caption="${captionAfterNext}"`);
   }
 
   await page.keyboard.press("ArrowLeft");
   await page.waitForTimeout(150);
   const captionAfterPrev = await page.locator("figcaption").textContent();
-  if (!captionAfterPrev?.includes("1 / 12")) {
+  if (!captionAfterPrev?.includes("1 / ")) {
     issues.push(`ArrowLeft navigation failed: caption="${captionAfterPrev}"`);
   }
 

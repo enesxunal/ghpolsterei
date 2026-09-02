@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Container } from "@/components/ui/Container";
+import { OpeningHours } from "@/components/ui/OpeningHours";
 import { site } from "@/data/site";
 import { getMailtoHref, getTelHref } from "@/lib/links";
 
@@ -49,7 +50,9 @@ export function Footer() {
                   {site.email}
                 </a>
               </p>
-              <p className="text-ivory/65">{site.openingHours}</p>
+              <p className="text-ivory/65">
+                <OpeningHours />
+              </p>
             </address>
           </div>
 

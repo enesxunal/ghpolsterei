@@ -130,6 +130,19 @@ async function inspectDom(page, pagePath) {
       }
     }
 
+    if (bodyText.includes("gh.polsterei@gmail.com")) {
+      issues.push("Legacy Gmail still visible");
+    }
+    if (/\bMo\s*[–\-]\s*Sa\b/.test(bodyText) || /Mo bis Sa/i.test(bodyText)) {
+      issues.push("Old Mo–Sa hours still visible");
+    }
+    if (bodyText.includes("Abholung in Wesseling")) {
+      issues.push("Pickup still limited to Wesseling");
+    }
+    if (bodyText.includes("Handwerksrolle Köln")) {
+      issues.push("Old Handwerksrolle Köln trust label still visible");
+    }
+
     const jsonBlocks = [...document.querySelectorAll('script[type="application/ld+json"]')]
       .map((el) => {
         try {
@@ -167,6 +180,35 @@ async function inspectDom(page, pagePath) {
     if (currentPath === "/" || currentPath === "/kontakt") {
       const local = jsonBlocks.find((block) => block?.["@type"] === "LocalBusiness");
       if (!local) issues.push("LocalBusiness JSON-LD missing");
+      else {
+        if (local.email !== "info@ghpolsterei.de") {
+          issues.push(`LocalBusiness email unexpected: ${local.email}`);
+        }
+        const spec = local.openingHoursSpecification;
+        const days = Array.isArray(spec?.dayOfWeek)
+          ? spec.dayOfWeek
+          : spec?.dayOfWeek
+            ? [spec.dayOfWeek]
+            : [];
+        if (days.includes("Saturday") || days.includes("Sunday")) {
+          issues.push("LocalBusiness opening hours include unverified weekend times");
+        }
+      }
+    }
+
+    if (currentPath === "/") {
+      if (!bodyText.includes("Kostenlose Beratung")) {
+        issues.push("Homepage missing Kostenlose Beratung");
+      }
+      if (!bodyText.includes("Zertifikat")) {
+        issues.push("Homepage missing Zertifikat label");
+      }
+    }
+
+    if (currentPath === "/ueber-uns") {
+      if (!bodyText.includes("Abhol-/Lieferservice nach Absprache")) {
+        issues.push("Über uns missing Abhol-/Lieferservice nach Absprache");
+      }
     }
 
     return {

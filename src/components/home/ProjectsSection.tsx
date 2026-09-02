@@ -45,7 +45,7 @@ export function ProjectsSection() {
               >
                 <Image
                   src={project.image}
-                  alt={`Projekt ${project.id} — Polsterarbeit von GH Polsterei`}
+                  alt={project.alt}
                   fill
                   loading="eager"
                   className="object-cover object-center transition-[transform,filter] duration-500 group-hover:brightness-110 motion-reduce:transition-none"
