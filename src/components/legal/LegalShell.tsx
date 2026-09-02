@@ -18,11 +18,11 @@ export function LegalShell({ eyebrow, heading, intro, children }: LegalShellProp
       <main id="main-content">
         <section
           aria-labelledby="legal-heading"
-          className="bg-navy py-12 text-ivory sm:py-16 lg:py-20"
+          className="bg-dark py-12 text-ivory sm:py-16 lg:py-20"
         >
           <Container>
             <BreadcrumbNav
-              tone="on-navy"
+              tone="on-dark"
               items={[
                 { label: "Startseite", href: "/" },
                 { label: eyebrow },
@@ -49,7 +49,7 @@ export function LegalShell({ eyebrow, heading, intro, children }: LegalShellProp
 
         <section className="bg-ivory py-12 sm:py-16 lg:py-20">
           <Container>
-            <div className="max-w-[42rem] text-[1.0625rem] leading-[1.75] text-navy/90">
+            <div className="max-w-[42rem] text-[1.0625rem] leading-[1.75] text-dark/90">
               {children}
             </div>
           </Container>
@@ -69,7 +69,7 @@ export function LegalSection({
 }) {
   return (
     <section className="mt-10 first:mt-0">
-      <h2 className="font-serif text-2xl font-semibold text-navy sm:text-[1.65rem]">
+      <h2 className="font-serif text-2xl font-semibold text-dark sm:text-[1.65rem]">
         {heading}
       </h2>
       <div className="mt-4 space-y-4">{children}</div>

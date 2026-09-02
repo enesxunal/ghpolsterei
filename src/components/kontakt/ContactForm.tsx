@@ -34,9 +34,9 @@ type ContactFormProps = {
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 const inputClass =
-  "mt-2 min-h-12 w-full border border-border bg-surface px-3.5 py-3 text-base text-navy placeholder:text-muted/50 focus-visible:border-gold focus-visible:outline-none disabled:opacity-60";
+  "mt-2 min-h-12 w-full border border-border bg-surface px-3.5 py-3 text-base text-dark placeholder:text-muted/50 focus-visible:border-gold focus-visible:outline-none disabled:opacity-60";
 
-const labelClass = "text-[0.9375rem] font-medium text-navy";
+const labelClass = "text-[0.9375rem] font-medium text-dark";
 
 const hintClass = "mt-1 text-sm text-muted";
 
@@ -491,7 +491,7 @@ export function ContactForm({ timestampToken, turnstileSiteKey }: ContactFormPro
           disabled={submitting}
           aria-invalid={Boolean(errors.service)}
           aria-describedby={errors.service ? serviceIds.error : undefined}
-          className={`${inputClass} appearance-none bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%228%22 fill=%22none%22%3E%3Cpath d=%22M1 1.5 6 6.5 11 1.5%22 stroke=%22%23131D3B%22 stroke-width=%221.4%22/%3E%3C/svg%3E')] bg-[length:12px_8px] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
+          className={`${inputClass} appearance-none bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%228%22 fill=%22none%22%3E%3Cpath d=%22M1 1.5 6 6.5 11 1.5%22 stroke=%22%23111111%22 stroke-width=%221.4%22/%3E%3C/svg%3E')] bg-[length:12px_8px] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
           onChange={(event) => setService(event.target.value)}
         >
           <option value="">Bitte wählen</option>
@@ -571,7 +571,7 @@ export function ContactForm({ timestampToken, turnstileSiteKey }: ContactFormPro
             onDrop={() => setDragging(false)}
           />
           <div className="pointer-events-none">
-            <span className="inline-flex min-h-12 items-center justify-center rounded-sm border border-navy/30 bg-ivory px-4 py-2 text-sm font-medium text-navy">
+            <span className="inline-flex min-h-12 items-center justify-center rounded-sm border border-dark/30 bg-ivory px-4 py-2 text-sm font-medium text-dark">
               Dateien auswählen
             </span>
             <p className="mt-3 text-sm text-muted">

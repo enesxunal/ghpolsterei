@@ -19,12 +19,12 @@ const baseClass =
  * Tailwind v4 does not guarantee source-order overrides, which made dark-section CTAs invisible.
  */
 const variantClass: Record<ButtonVariant, string> = {
-  primary: "border-navy bg-navy text-ivory hover:border-navy-deep hover:bg-navy-deep",
-  secondary: "border-navy/45 bg-transparent text-navy hover:border-navy hover:bg-navy/[0.04]",
-  gold: "border-gold bg-gold text-navy hover:border-gold-dark hover:bg-gold-dark",
+  primary: "border-dark bg-dark text-ivory hover:border-dark-deep hover:bg-dark-deep",
+  secondary: "border-dark/45 bg-transparent text-dark hover:border-dark hover:bg-dark/[0.04]",
+  gold: "border-gold bg-gold text-dark hover:border-gold-dark hover:bg-gold-dark",
   inverse:
     "border-ivory/55 bg-transparent text-ivory hover:border-gold hover:bg-ivory/[0.08] hover:text-gold",
-  ghost: "border-transparent bg-transparent text-navy hover:text-gold",
+  ghost: "border-transparent bg-transparent text-dark hover:text-gold",
 };
 
 export function buttonClassName(variant: ButtonVariant = "primary", className = "") {

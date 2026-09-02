@@ -13,7 +13,7 @@ export function ProjectsSection() {
   return (
     <section
       aria-labelledby="projekte-heading"
-      className="bg-navy py-16 text-ivory sm:py-20 lg:py-24"
+      className="bg-dark py-16 text-ivory sm:py-20 lg:py-24"
     >
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
@@ -22,7 +22,7 @@ export function ProjectsSection() {
             eyebrow={projectsConfig.title}
             title={projectsConfig.heading}
             intro={projectsConfig.intro}
-            tone="on-navy"
+            tone="on-dark"
           />
           <ButtonLink href="/projekte" variant="inverse" className="w-full shrink-0 sm:w-auto">
             Alle Projekte
@@ -55,7 +55,7 @@ export function ProjectsSection() {
                       : "(max-width: 640px) 50vw, 25vw"
                   }
                 />
-                <span className="absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/15 motion-reduce:transition-none" />
+                <span className="absolute inset-0 bg-dark/0 transition-colors duration-300 group-hover:bg-dark/15 motion-reduce:transition-none" />
               </Link>
             </li>
           ))}

@@ -5,7 +5,7 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   className?: string;
   id?: string;
-  tone?: "default" | "on-navy";
+  tone?: "default" | "on-dark";
 };
 
 export function SectionHeading({
@@ -18,13 +18,13 @@ export function SectionHeading({
   tone = "default",
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
-  const onNavy = tone === "on-navy";
+  const onDark = tone === "on-dark";
 
   return (
     <div className={`max-w-2xl ${alignClass} ${className}`}>
       <p
         className={`text-[0.75rem] font-medium uppercase tracking-[0.18em] sm:text-[0.8125rem] ${
-          onNavy ? "text-gold" : "text-gold-dark"
+          onDark ? "text-gold" : "text-gold-dark"
         }`}
       >
         {eyebrow}
@@ -32,7 +32,7 @@ export function SectionHeading({
       <h2
         id={id}
         className={`mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] sm:text-4xl lg:text-[2.65rem] xl:text-[3.1rem] ${
-          onNavy ? "text-ivory" : "text-navy"
+          onDark ? "text-ivory" : "text-dark"
         }`}
       >
         {title}
@@ -40,7 +40,7 @@ export function SectionHeading({
       {intro ? (
         <p
           className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            onNavy ? "text-ivory/80" : "text-muted"
+            onDark ? "text-ivory/80" : "text-muted"
           }`}
         >
           {intro}

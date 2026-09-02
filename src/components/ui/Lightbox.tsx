@@ -74,7 +74,7 @@ export function Lightbox({
     >
       <button
         type="button"
-        className="absolute inset-0 bg-navy-deep/90 motion-reduce:transition-none"
+        className="absolute inset-0 bg-dark-deep/90 motion-reduce:transition-none"
         aria-label="Lightbox schließen"
         onClick={onClose}
       />
@@ -116,7 +116,7 @@ export function Lightbox({
             <>
               <button
                 type="button"
-                className="absolute left-2 top-1/2 z-[2] inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-sm bg-navy/50 text-ivory backdrop-blur-sm transition-colors hover:bg-navy hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:left-4 motion-reduce:transition-none"
+                className="absolute left-2 top-1/2 z-[2] inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-sm bg-dark/50 text-ivory backdrop-blur-sm transition-colors hover:bg-dark hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:left-4 motion-reduce:transition-none"
                 aria-label="Vorheriges Bild"
                 onClick={(event) => {
                   event.stopPropagation();
@@ -127,7 +127,7 @@ export function Lightbox({
               </button>
               <button
                 type="button"
-                className="absolute right-2 top-1/2 z-[2] inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-sm bg-navy/50 text-ivory backdrop-blur-sm transition-colors hover:bg-navy hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:right-4 motion-reduce:transition-none"
+                className="absolute right-2 top-1/2 z-[2] inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-sm bg-dark/50 text-ivory backdrop-blur-sm transition-colors hover:bg-dark hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:right-4 motion-reduce:transition-none"
                 aria-label="Nächstes Bild"
                 onClick={(event) => {
                   event.stopPropagation();

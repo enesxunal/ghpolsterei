@@ -9,7 +9,7 @@ export function Footer() {
   const addressLine = `${site.address.street}, ${site.address.postalCode} ${site.address.city}`;
 
   return (
-    <footer className="bg-navy-deep text-ivory">
+    <footer className="bg-dark-deep text-ivory">
       <Container as="footer" className="py-14 sm:py-16 lg:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-1">

@@ -21,7 +21,7 @@ export function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="static z-50 bg-navy lg:sticky lg:top-0">
+    <header className="static z-50 bg-dark lg:sticky lg:top-0">
       <Container as="nav" aria-label="Hauptnavigation">
         <div className="flex h-20 items-center justify-between gap-4 lg:h-[6.25rem]">
           <Link
@@ -51,7 +51,7 @@ export function Header() {
 
           <a
             href={getTelHref()}
-            className="hidden shrink-0 items-center justify-center rounded-sm bg-gold px-4 py-2.5 text-[0.9375rem] font-medium tracking-wide text-navy transition-colors hover:bg-gold-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold lg:inline-flex"
+            className="hidden shrink-0 items-center justify-center rounded-sm bg-gold px-4 py-2.5 text-[0.9375rem] font-medium tracking-wide text-dark transition-colors hover:bg-gold-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold lg:inline-flex"
           >
             Anrufen
           </a>
@@ -109,14 +109,14 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
   return createPortal(
     <>
       <div
-        className="fixed inset-0 top-20 z-[90] bg-navy-deep/70 lg:hidden"
+        className="fixed inset-0 top-20 z-[90] bg-dark-deep/70 lg:hidden"
         aria-hidden="true"
         onClick={onClose}
       />
 
       <div
         id="mobile-menu"
-        className="fixed inset-x-0 top-20 bottom-0 z-[95] flex flex-col bg-navy lg:hidden"
+        className="fixed inset-x-0 top-20 bottom-0 z-[95] flex flex-col bg-dark lg:hidden"
         role="dialog"
         aria-modal="true"
         aria-label="Mobilnavigation"
@@ -139,7 +139,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
           <div className="mt-auto space-y-3 border-t border-ivory/15 pt-6">
             <a
               href={getTelHref()}
-              className="inline-flex items-center justify-center rounded-sm bg-gold px-5 py-3 text-base font-medium text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="inline-flex items-center justify-center rounded-sm bg-gold px-5 py-3 text-base font-medium text-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               {site.phoneFormatted}
             </a>

@@ -28,13 +28,13 @@ export function ServicesOverviewGrid({ services }: ServicesOverviewGridProps) {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
                 {service.eyebrow}
               </p>
-              <h2 className="mt-2 font-serif text-[1.35rem] leading-snug text-navy sm:text-[1.5rem]">
+              <h2 className="mt-2 font-serif text-[1.35rem] leading-snug text-dark sm:text-[1.5rem]">
                 {service.title}
               </h2>
               <p className="mt-2 flex-1 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
                 {service.description}
               </p>
-              <span className="mt-4 inline-flex w-fit text-[0.9375rem] font-medium text-gold-dark underline-offset-4 transition-colors group-hover:text-navy group-hover:underline motion-reduce:transition-none">
+              <span className="mt-4 inline-flex w-fit text-[0.9375rem] font-medium text-gold-dark underline-offset-4 transition-colors group-hover:text-dark group-hover:underline motion-reduce:transition-none">
                 Zur Leistung
               </span>
             </div>

@@ -34,11 +34,11 @@ export default function LeistungenPage() {
       <main id="main-content">
         <section
           aria-labelledby="leistungen-page-heading"
-          className="bg-navy py-12 text-ivory sm:py-16 lg:py-20"
+          className="bg-dark py-12 text-ivory sm:py-16 lg:py-20"
         >
           <Container>
             <BreadcrumbNav
-              tone="on-navy"
+              tone="on-dark"
               items={[
                 { label: "Startseite", href: "/" },
                 { label: leistungenPage.title },
@@ -71,7 +71,7 @@ export default function LeistungenPage() {
           </Container>
         </section>
 
-        <section className="bg-navy py-12 text-ivory sm:py-16">
+        <section className="bg-dark py-12 text-ivory sm:py-16">
           <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="max-w-xl">
               <h2 className="font-serif text-2xl text-ivory sm:text-3xl">

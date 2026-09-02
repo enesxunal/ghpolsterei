@@ -35,7 +35,7 @@ export function ProcessSection() {
               >
                 {step.number}
               </span>
-              <h3 className="mt-5 font-serif text-2xl text-navy sm:text-[1.65rem]">
+              <h3 className="mt-5 font-serif text-2xl text-dark sm:text-[1.65rem]">
                 {step.title}
               </h3>
               <p className="mt-3 text-base leading-relaxed text-muted">

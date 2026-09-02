@@ -31,7 +31,7 @@ export function ServicesSection() {
                 />
               </div>
               <div className="flex flex-1 flex-col border-t border-gold/70 pt-4 sm:pt-5">
-                <h3 className="font-serif text-[1.35rem] leading-snug text-navy sm:text-[1.5rem]">
+                <h3 className="font-serif text-[1.35rem] leading-snug text-dark sm:text-[1.5rem]">
                   {service.name}
                 </h3>
                 <p className="mt-2 flex-1 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
@@ -39,7 +39,7 @@ export function ServicesSection() {
                 </p>
                 <Link
                   href={`/leistungen/${service.slug}`}
-                  className="mt-4 inline-flex w-fit text-[0.9375rem] font-medium text-gold-dark underline-offset-4 transition-colors hover:text-navy hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold motion-reduce:transition-none"
+                  className="mt-4 inline-flex w-fit text-[0.9375rem] font-medium text-gold-dark underline-offset-4 transition-colors hover:text-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold motion-reduce:transition-none"
                 >
                   Mehr erfahren
                 </Link>

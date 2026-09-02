@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --brand-navy: #131d3b;
-  --brand-navy-deep: #0d152b;
+  --brand-dark: #111111;
+  --brand-dark-deep: #080808;
   --brand-gold: #dca54a;
   --brand-gold-dark: #d09a40;
   --brand-ivory: #f8f5ef;
   --brand-white: #ffffff;
   --brand-ink: #171717;
-  --brand-muted: #5c6170;
+  --brand-muted: #5c5c5c;
   --brand-border: #d8d4cc;
 
   --background: var(--brand-ivory);
-  --foreground: var(--brand-navy);
+  --foreground: var(--brand-dark);
   --muted: var(--brand-muted);
   --accent: var(--brand-gold);
   --surface: var(--brand-white);
@@ -26,8 +26,8 @@
   --color-accent: var(--accent);
   --color-surface: var(--surface);
   --color-border: var(--border);
-  --color-navy: var(--brand-navy);
-  --color-navy-deep: var(--brand-navy-deep);
+  --color-dark: var(--brand-dark);
+  --color-dark-deep: var(--brand-dark-deep);
   --color-gold: var(--brand-gold);
   --color-gold-dark: var(--brand-gold-dark);
   --color-ivory: var(--brand-ivory);

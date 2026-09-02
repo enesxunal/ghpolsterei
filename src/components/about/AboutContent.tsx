@@ -20,11 +20,11 @@ export function AboutContent() {
     <>
       <section
         aria-labelledby="about-heading"
-        className="bg-navy py-12 text-ivory sm:py-16 lg:py-20"
+        className="bg-dark py-12 text-ivory sm:py-16 lg:py-20"
       >
         <Container>
           <BreadcrumbNav
-            tone="on-navy"
+            tone="on-dark"
             items={[
               { label: "Startseite", href: "/" },
               { label: aboutPage.title },
@@ -72,7 +72,7 @@ export function AboutContent() {
               </p>
               <h2
                 id="werkstatt-heading"
-                className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-navy sm:text-4xl"
+                className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-dark sm:text-4xl"
               >
                 {workshop.heading}
               </h2>
@@ -105,7 +105,7 @@ export function AboutContent() {
             </p>
             <h2
               id="handwerk-about-heading"
-              className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-navy sm:text-4xl"
+              className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-dark sm:text-4xl"
             >
               {craft.heading}
             </h2>
@@ -143,7 +143,7 @@ export function AboutContent() {
               </p>
               <h2
                 id="beratung-heading"
-                className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-navy sm:text-4xl"
+                className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-dark sm:text-4xl"
               >
                 {consultation.heading}
               </h2>
@@ -157,7 +157,7 @@ export function AboutContent() {
         </Container>
       </section>
 
-      <section aria-labelledby="gallery-heading" className="bg-navy py-16 text-ivory sm:py-20 lg:py-24">
+      <section aria-labelledby="gallery-heading" className="bg-dark py-16 text-ivory sm:py-20 lg:py-24">
         <Container>
           <div className="max-w-2xl">
             <p className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold sm:text-[0.8125rem]">
@@ -202,7 +202,7 @@ export function AboutContent() {
             </p>
             <h2
               id="ablauf-about-heading"
-              className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-navy sm:text-4xl"
+              className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-dark sm:text-4xl"
             >
               {process.heading}
             </h2>
@@ -221,7 +221,7 @@ export function AboutContent() {
                 >
                   {step.number}
                 </span>
-                <h3 className="mt-5 font-serif text-2xl text-navy sm:text-[1.65rem]">
+                <h3 className="mt-5 font-serif text-2xl text-dark sm:text-[1.65rem]">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-muted">
@@ -241,7 +241,7 @@ export function AboutContent() {
             </p>
             <h2
               id="material-heading"
-              className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-navy sm:text-4xl"
+              className="mt-3 font-serif text-[1.85rem] font-semibold leading-[1.12] text-dark sm:text-4xl"
             >
               {materials.heading}
             </h2>
@@ -254,7 +254,7 @@ export function AboutContent() {
         </Container>
       </section>
 
-      <section className="bg-navy py-12 text-ivory sm:py-16">
+      <section className="bg-dark py-12 text-ivory sm:py-16">
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-xl">
             <h2 className="font-serif text-2xl text-ivory sm:text-3xl">{cta.heading}</h2>

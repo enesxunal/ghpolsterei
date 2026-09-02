@@ -15,7 +15,7 @@ const reasonIcons: Record<(typeof site.trustReasons)[number], ReactNode> = {
 export function TrustStrip() {
   return (
     <>
-      <section aria-label="Standort und Arbeitsweise" className="bg-navy-deep text-ivory">
+      <section aria-label="Standort und Arbeitsweise" className="bg-dark-deep text-ivory">
         <Container className="py-8 sm:py-10">
           <ul className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
             {homepage.trustBand.map((item) => (
@@ -37,7 +37,7 @@ export function TrustStrip() {
             </p>
             <h2
               id="advantages-heading"
-              className="mt-3 font-serif text-[1.65rem] font-semibold leading-[1.12] text-navy sm:text-3xl"
+              className="mt-3 font-serif text-[1.65rem] font-semibold leading-[1.12] text-dark sm:text-3xl"
             >
               Sechs Gründe
             </h2>
@@ -45,14 +45,14 @@ export function TrustStrip() {
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
             {site.trustReasons.map((reason) => (
               <li key={reason} className="h-full min-w-0">
-                <div className="flex h-full min-h-[5.5rem] items-center gap-4 border border-navy/12 bg-white px-5 py-5 sm:min-h-[6.25rem] sm:px-6">
+                <div className="flex h-full min-h-[5.5rem] items-center gap-4 border border-dark/12 bg-white px-5 py-5 sm:min-h-[6.25rem] sm:px-6">
                   <span
                     className="flex h-11 w-11 shrink-0 items-center justify-center border border-gold/70 text-gold-dark"
                     aria-hidden="true"
                   >
                     {reasonIcons[reason]}
                   </span>
-                  <p className="min-w-0 font-serif text-[1.0625rem] font-medium leading-snug text-navy sm:text-lg">
+                  <p className="min-w-0 font-serif text-[1.0625rem] font-medium leading-snug text-dark sm:text-lg">
                     {reason}
                   </p>
                 </div>

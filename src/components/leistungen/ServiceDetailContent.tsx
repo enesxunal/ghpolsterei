@@ -59,11 +59,11 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
     <>
       <section
         aria-labelledby="service-detail-heading"
-        className="bg-navy py-12 text-ivory sm:py-16 lg:py-20"
+        className="bg-dark py-12 text-ivory sm:py-16 lg:py-20"
       >
         <Container>
           <BreadcrumbNav
-            tone="on-navy"
+            tone="on-dark"
             items={[
               { label: "Startseite", href: "/" },
               { label: "Leistungen", href: "/leistungen" },
@@ -108,7 +108,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
           <div className="mx-auto max-w-3xl space-y-14 sm:space-y-16">
             {service.sections.map((section) => (
               <article key={section.heading}>
-                <h2 className="font-serif text-2xl font-semibold text-navy sm:text-3xl">
+                <h2 className="font-serif text-2xl font-semibold text-dark sm:text-3xl">
                   {section.heading}
                 </h2>
                 <div className="mt-4 space-y-4 text-base leading-relaxed text-muted sm:text-[1.0625rem]">
@@ -141,7 +141,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
               </p>
               <h2
                 id="workshop-insights-heading"
-                className="mt-3 font-serif text-2xl font-semibold text-navy sm:text-3xl"
+                className="mt-3 font-serif text-2xl font-semibold text-dark sm:text-3xl"
               >
                 Einblicke aus der Werkstatt
               </h2>
@@ -166,7 +166,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
 
       <section
         aria-labelledby="service-process-heading"
-        className="bg-navy py-12 text-ivory sm:py-16 lg:py-20"
+        className="bg-dark py-12 text-ivory sm:py-16 lg:py-20"
       >
         <Container>
           <div className="max-w-2xl">
@@ -203,7 +203,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
           <Container>
             <h2
               id="related-services-heading"
-              className="font-serif text-2xl text-navy sm:text-3xl"
+              className="font-serif text-2xl text-dark sm:text-3xl"
             >
               Weitere Leistungen
             </h2>
@@ -217,7 +217,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
                     <p className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold-dark">
                       {item.eyebrow}
                     </p>
-                    <h3 className="mt-2 font-serif text-xl text-navy transition-colors group-hover:text-gold-dark motion-reduce:transition-none">
+                    <h3 className="mt-2 font-serif text-xl text-dark transition-colors group-hover:text-gold-dark motion-reduce:transition-none">
                       {item.title}
                     </h3>
                     <p className="mt-2 text-[0.9375rem] leading-relaxed text-muted">
@@ -231,7 +231,7 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </section>
       )}
 
-      <section className="bg-navy py-12 text-ivory sm:py-16">
+      <section className="bg-dark py-12 text-ivory sm:py-16">
         <Container className="grid gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
             <h2 className="font-serif text-2xl text-ivory sm:text-3xl">

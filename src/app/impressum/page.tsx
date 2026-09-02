@@ -34,7 +34,7 @@ export default function ImpressumPage() {
           Telefon:{" "}
           <a
             href={getTelHref()}
-            className="underline decoration-border underline-offset-4 transition-colors hover:decoration-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            className="underline decoration-border underline-offset-4 transition-colors hover:decoration-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
             {site.phoneFormatted}
           </a>
@@ -42,7 +42,7 @@ export default function ImpressumPage() {
           E-Mail:{" "}
           <a
             href={getMailtoHref()}
-            className="break-all underline decoration-border underline-offset-4 transition-colors hover:decoration-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            className="break-all underline decoration-border underline-offset-4 transition-colors hover:decoration-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
             {site.email}
           </a>

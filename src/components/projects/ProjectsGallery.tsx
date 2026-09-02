@@ -44,7 +44,7 @@ export function ProjectsGallery({ projects }: ProjectsGalleryProps) {
                 className="h-auto w-full transition-[filter] duration-500 group-hover:brightness-110 motion-reduce:transition-none"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <span className="absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/15 motion-reduce:transition-none" />
+              <span className="absolute inset-0 bg-dark/0 transition-colors duration-300 group-hover:bg-dark/15 motion-reduce:transition-none" />
             </button>
           </li>
         ))}

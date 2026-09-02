@@ -10,7 +10,7 @@ export function FinalCta() {
   return (
     <section aria-labelledby="cta-heading" className="bg-ivory py-16 sm:py-20 lg:py-24">
       <Container>
-        <div className="bg-navy px-6 py-14 text-center sm:px-10 sm:py-16 lg:px-16 lg:py-[4.5rem]">
+        <div className="bg-dark px-6 py-14 text-center sm:px-10 sm:py-16 lg:px-16 lg:py-[4.5rem]">
           <p className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold sm:text-[0.8125rem]">
             Kontakt
           </p>

@@ -1,0 +1,79 @@
+[
+  {
+    "viewport": "customer-black-revision-home-1440",
+    "status": 200,
+    "issues": [],
+    "samples": {
+      "header": "rgb(17, 17, 17)",
+      "footer": "rgb(8, 8, 8)",
+      "hero": "rgb(17, 17, 17)"
+    },
+    "h1": "Polsterei & Sattlerei in Wesseling"
+  },
+  {
+    "viewport": "customer-black-revision-kontakt-1440",
+    "status": 200,
+    "issues": [],
+    "samples": {
+      "header": "rgb(17, 17, 17)",
+      "footer": "rgb(8, 8, 8)",
+      "hero": "rgb(17, 17, 17)"
+    },
+    "h1": "Ihr Projekt. Unsere Handarbeit."
+  },
+  {
+    "viewport": "customer-black-revision-leistungen-1440",
+    "status": 200,
+    "issues": [],
+    "samples": {
+      "header": "rgb(17, 17, 17)",
+      "footer": "rgb(8, 8, 8)",
+      "hero": "rgb(17, 17, 17)"
+    },
+    "h1": "Leistungen der GH Polsterei"
+  },
+  {
+    "viewport": "customer-black-revision-projekte-1440",
+    "status": 200,
+    "issues": [],
+    "samples": {
+      "header": "rgb(17, 17, 17)",
+      "footer": "rgb(8, 8, 8)",
+      "hero": "rgb(17, 17, 17)"
+    },
+    "h1": "Unsere Projekte"
+  },
+  {
+    "viewport": "customer-black-revision-ueber-uns-1440",
+    "status": 200,
+    "issues": [],
+    "samples": {
+      "header": "rgb(17, 17, 17)",
+      "footer": "rgb(8, 8, 8)",
+      "hero": "rgb(17, 17, 17)"
+    },
+    "h1": "Handwerk mit Anspruch"
+  },
+  {
+    "viewport": "customer-black-revision-home-390",
+    "status": 200,
+    "issues": [],
+    "samples": {
+      "header": "rgb(17, 17, 17)",
+      "footer": "rgb(8, 8, 8)",
+      "hero": "rgb(17, 17, 17)"
+    },
+    "h1": "Polsterei & Sattlerei in Wesseling"
+  },
+  {
+    "viewport": "customer-black-revision-kontakt-390",
+    "status": 200,
+    "issues": [],
+    "samples": {
+      "header": "rgb(17, 17, 17)",
+      "footer": "rgb(8, 8, 8)",
+      "hero": "rgb(17, 17, 17)"
+    },
+    "h1": "Ihr Projekt. Unsere Handarbeit."
+  }
+]

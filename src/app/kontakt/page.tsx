@@ -50,11 +50,11 @@ export default function KontaktPage() {
       <main id="main-content">
         <section
           aria-labelledby="kontakt-page-heading"
-          className="bg-navy py-12 text-ivory sm:py-16 lg:py-20"
+          className="bg-dark py-12 text-ivory sm:py-16 lg:py-20"
         >
           <Container>
             <BreadcrumbNav
-              tone="on-navy"
+              tone="on-dark"
               items={[
                 { label: "Startseite", href: "/" },
                 { label: contactPage.title },
@@ -97,7 +97,7 @@ export default function KontaktPage() {
           <Container>
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-16">
               <aside className="lg:col-span-5">
-                <div className="bg-navy px-6 py-8 text-ivory sm:px-8 sm:py-10">
+                <div className="bg-dark px-6 py-8 text-ivory sm:px-8 sm:py-10">
                   <BrandLogo
                     variant="gold"
                     className="h-[72px] w-auto max-w-none"
@@ -176,7 +176,7 @@ export default function KontaktPage() {
                 </p>
                 <h2
                   id="kontakt-form-heading"
-                  className="mt-3 font-serif text-2xl leading-tight text-navy sm:text-3xl"
+                  className="mt-3 font-serif text-2xl leading-tight text-dark sm:text-3xl"
                 >
                   {contactPage.formHeading}
                 </h2>

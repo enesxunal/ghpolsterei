@@ -18,7 +18,7 @@ const rateLimitMinutes = CONTACT_LIMITS.rateLimitWindowMs / 60000;
 const formTokenHours = CONTACT_LIMITS.maxFormAgeMs / (60 * 60 * 1000);
 
 const linkClass =
-  "underline decoration-border underline-offset-4 transition-colors hover:decoration-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold";
+  "underline decoration-border underline-offset-4 transition-colors hover:decoration-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold";
 
 export default function DatenschutzPage() {
   return (

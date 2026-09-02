@@ -8,7 +8,7 @@ export default function NotFound() {
     <>
       <Header />
       <main id="main-content">
-        <section className="bg-navy py-20 text-ivory sm:py-24 lg:py-32">
+        <section className="bg-dark py-20 text-ivory sm:py-24 lg:py-32">
           <Container>
             <div className="max-w-2xl">
               <p className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold sm:text-[0.8125rem]">
