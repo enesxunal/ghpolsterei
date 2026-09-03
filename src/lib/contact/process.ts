@@ -1,4 +1,4 @@
-import { site } from "@/data/site";
+import type { ContactApiFailure, ContactApiResponse } from "@/lib/contact/api-types";
 import {
   CONTACT_LIMITS,
   GENERIC_ERROR_MESSAGE,
@@ -9,9 +9,9 @@ import {
   TURNSTILE_FIELD,
   UNAVAILABLE_MESSAGE,
 } from "@/lib/contact/constants";
-import type { ContactApiFailure, ContactApiResponse } from "@/lib/contact/api-types";
 import { getTurnstileSiteKey, isHostedDeploy } from "@/lib/contact/env";
 import { sendContactMail } from "@/lib/contact/mail";
+import { isAllowedOrigin } from "@/lib/contact/origin";
 import { checkContactRateLimit, getRequestIp } from "@/lib/contact/rate-limit";
 import { planEmailAttachments } from "@/lib/contact/storage";
 import { verifyFormTimestampToken } from "@/lib/contact/time-trap";
@@ -37,26 +37,6 @@ function rateLimitFail(): ContactApiFailure {
 function readString(formData: FormData, key: string): string {
   const value = formData.get(key);
   return typeof value === "string" ? value : "";
-}
-
-function isAllowedOrigin(origin: string | null): boolean {
-  if (!origin) return true;
-
-  const allowed = new Set<string>([
-    site.website,
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-  ]);
-
-  const vercelUrl = process.env.VERCEL_URL?.trim();
-  if (vercelUrl) {
-    allowed.add(`https://${vercelUrl}`);
-  }
-
-  const extra = process.env.CONTACT_ALLOWED_ORIGIN?.trim();
-  if (extra) allowed.add(extra.replace(/\/$/, ""));
-
-  return allowed.has(origin.replace(/\/$/, ""));
 }
 
 function collectPhotoFiles(formData: FormData): File[] {
