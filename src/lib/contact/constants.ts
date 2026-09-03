@@ -40,7 +40,7 @@ export const TURNSTILE_FIELD = "cf-turnstile-response";
 export const PAYLOAD_TOO_LARGE = "payload-too-large";
 
 export const GENERIC_ERROR_MESSAGE =
-  "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder rufen Sie uns an.";
+  "Ihre Anfrage konnte leider nicht gesendet werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch.";
 
 export const UNAVAILABLE_MESSAGE =
   "Das Formular ist derzeit nicht verfügbar. Bitte erreichen Sie uns telefonisch oder per E-Mail.";

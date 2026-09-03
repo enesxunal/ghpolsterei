@@ -4,6 +4,7 @@ import { FinalCta } from "@/components/home/FinalCta";
 import { Hero } from "@/components/home/Hero";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { ProjectsSection } from "@/components/home/ProjectsSection";
+import { RegionSection } from "@/components/home/RegionSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { Footer } from "@/components/layout/Footer";
@@ -36,6 +37,7 @@ export default function Home() {
         <ProjectsSection />
         <CraftsmanshipTeaser />
         <ProcessSection />
+        <RegionSection />
         <FinalCta />
       </main>
       <Footer />

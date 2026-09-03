@@ -10,9 +10,13 @@ Set before the first live deploy. Hosted production **fails closed** if these ar
 ```
 NEXT_PUBLIC_TURNSTILE_SITE_KEY
 TURNSTILE_SECRET_KEY
-RESEND_API_KEY
-CONTACT_TO_EMAIL=gh.polsterei@gmail.com
-CONTACT_FROM_EMAIL          # verified Resend domain, not Gmail
+SMTP_HOST=mail.ghpolsterei.de
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER
+SMTP_PASSWORD
+CONTACT_TO_EMAIL
+CONTACT_FROM_EMAIL
 CONTACT_FORM_SECRET         # long random value, not the local fallback
 UPSTASH_REDIS_REST_URL
 UPSTASH_REDIS_REST_TOKEN
@@ -55,7 +59,7 @@ No analytics, pixels, or first-party cookies. No cookie banner. Client third par
 
 ## Legal review reminders
 
-See `docs/legal-review-required.md` before treating Impressum/Datenschutz as final (VSBG, DPAs, Gmail mailbox, Vercel region after go-live).
+See `docs/legal-review-required.md` before treating Impressum/Datenschutz as final (VSBG, DPAs, mailbox, Vercel region after go-live).
 
 ## Asset audit (`public/images`)
 
@@ -91,7 +95,7 @@ INP was not reported in these runs. Mobile LCP is dominated by large legacy/serv
 
 - [ ] Preview deploy with all ENV set
 - [ ] Turnstile works on the preview host
-- [ ] Resend delivers a real form mail with a photo
+- [ ] SMTP delivers a real form mail with a photo
 - [ ] `/datenschutz` 200, contact privacy link works
 - [ ] Canonical URLs are `https://ghpolsterei.de/...` (not the Vercel URL)
 - [ ] Headers and `X-Powered-By` absence confirmed on the preview host

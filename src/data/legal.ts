@@ -15,7 +15,7 @@ export const datenschutzPage = {
   metadata: {
     title: "Datenschutzerklärung | GH Polsterei",
     description:
-      "Informationen zur Verarbeitung personenbezogener Daten bei GH Polsterei: Kontaktformular, Hosting, Cloudflare Turnstile, Resend und Ihre Rechte nach der DSGVO.",
+      "Informationen zur Verarbeitung personenbezogener Daten bei GH Polsterei: Kontaktformular, Hosting, Cloudflare Turnstile und Ihre Rechte nach der DSGVO.",
   },
 } as const;
 

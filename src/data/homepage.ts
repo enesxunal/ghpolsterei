@@ -59,6 +59,15 @@ export const homepage = {
       },
     ],
   },
+  localSeo: {
+    eyebrow: "Region",
+    heading: "Polster- und Sattlerarbeiten aus Wesseling für die Region",
+    paragraphs: [
+      "Unsere Werkstatt liegt in Wesseling, südlich von Köln am Rhein. Von hier aus betreuen wir private und gewerbliche Kunden in der Köln/Bonn-Region, im Rhein-Erft-Kreis und in weiteren Teilen von Nordrhein-Westfalen. Die Ausführung findet in der Industriestraße statt — weitere Standorte gibt es nicht.",
+      "Zum Alltag gehören Polstermöbel neu beziehen, das Aufpolstern älterer Stühle und Sessel, Autositze, Cabrioverdecke und Sitzbänke für die Gastronomie. Markisen und Planen fertigen oder restaurieren wir ebenfalls in der Werkstatt.",
+      "Ein Abhol- und Lieferservice ist nach Absprache möglich. Anfahrt und Transport klären wir im Gespräch. Wenn Sie ein Vorhaben in der Region haben, erreichen Sie uns telefonisch, per E-Mail oder über das Kontaktformular. Die Werkstatt in Wesseling antwortet; eine zweite Betriebsstätte gibt es nicht.",
+    ],
+  },
   cta: {
     heading: "Bereit für Ihr nächstes Polsterprojekt?",
     body: "Rufen Sie uns an oder schreiben Sie uns — wir freuen uns auf Ihre Anfrage.",

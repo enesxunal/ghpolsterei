@@ -158,32 +158,25 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="Resend / E-Mail-Zustellung">
+      <LegalSection heading="E-Mail-Zustellung">
         <p>
-          Die Werkstatt-Nachricht wird über Resend (Plus Five Five, Inc., USA)
-          versendet, sobald die Production-Zugangsdaten hinterlegt sind. Resend
-          verarbeitet dabei den Inhalt der Anfrage und — soweit angehängt — die
-          Fotos, um die E-Mail an uns zuzustellen.
+          Die Nachricht aus dem Kontaktformular wird über den SMTP-Server des
+          bestehenden Website-Hostings (cPanel, Mailserver mail.ghpolsterei.de)
+          an das Werkstatt-Postfach {site.email} zugestellt. Dabei werden der
+          Inhalt der Anfrage und — soweit angehängt — die Fotos übermittelt,
+          damit wir Ihre Nachricht erhalten und beantworten können.
         </p>
         <p>
-          Empfänger der Nachricht ist die Werkstatt-Adresse {site.email}
-          (Google-Postfach). Google Ireland Limited bzw. Google LLC können die
-          E-Mail daher als Anbieter des Postfachs verarbeiten.
-        </p>
-        <p>
-          Resend bietet Auftragsverarbeitungsverträge und Standardvertragsklauseln
-          für Übermittlungen in die USA an. Die konkrete vertragliche Absicherung
-          ist vor dem Production-Betrieb im Anbieterkonto zu prüfen und
-          abzuschließen.
+          Ein gesonderter Versanddienstleister für Transaktions-E-Mails wird
+          dafür nicht eingesetzt.
         </p>
       </LegalSection>
 
       <LegalSection heading="Drittlandübermittlung">
         <p>
-          Vercel, Cloudflare, Upstash, Resend und — über das Werkstatt-Postfach —
-          Google haben Sitz oder Verarbeitungsorte auch außerhalb der EU,
-          insbesondere in den USA. Es gilt nicht, dass alle Daten in Deutschland
-          verbleiben.
+          Vercel, Cloudflare und Upstash haben Sitz oder Verarbeitungsorte auch
+          außerhalb der EU, insbesondere in den USA. Es gilt nicht, dass alle
+          Daten in Deutschland verbleiben.
         </p>
         <p>
           Soweit eine Übermittlung in ein Drittland erfolgt, stützt sie sich auf

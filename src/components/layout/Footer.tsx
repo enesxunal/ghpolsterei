@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Container } from "@/components/ui/Container";
 import { OpeningHours } from "@/components/ui/OpeningHours";
+import { regionNav } from "@/data/regions";
 import { site } from "@/data/site";
 import { getMailtoHref, getTelHref } from "@/lib/links";
 
@@ -11,8 +12,8 @@ export function Footer() {
   return (
     <footer className="bg-dark-deep text-ivory">
       <Container as="footer" className="py-14 sm:py-16 lg:py-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          <div className="sm:col-span-2 lg:col-span-1">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          <div className="sm:col-span-2 lg:col-span-3">
             <Link
               href="/"
               className="relative flex shrink-0 items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
@@ -28,7 +29,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="lg:col-span-3">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold sm:text-[0.8125rem]">
               Kontakt
             </h2>
@@ -56,7 +57,7 @@ export function Footer() {
             </address>
           </div>
 
-          <div>
+          <div className="lg:col-span-2">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold sm:text-[0.8125rem]">
               Navigation
             </h2>
@@ -90,7 +91,25 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="lg:col-span-2">
+            <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold sm:text-[0.8125rem]">
+              Region
+            </h2>
+            <ul className="mt-4 space-y-2.5">
+              {regionNav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-[0.9375rem] text-ivory/85 transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold motion-reduce:transition-none"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.18em] text-gold sm:text-[0.8125rem]">
               Rechtliches
             </h2>

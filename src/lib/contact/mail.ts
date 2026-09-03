@@ -1,19 +1,27 @@
+import nodemailer from "nodemailer";
 import { contactServiceOptions } from "@/data/contact";
 import { site } from "@/data/site";
 import {
-  getContactFromEmail,
   getContactToEmail,
-  getResendApiKey,
+  getSmtpConfig,
+  hasPartialSmtpConfig,
   isHostedDeploy,
+  type SmtpConfig,
 } from "@/lib/contact/env";
 import type { AttachmentPlan } from "@/lib/contact/storage";
 import type { ContactFields, ValidatedFile } from "@/lib/contact/validation";
 import { normalizePhone } from "@/lib/contact/validation";
 
+export type ContactRequestMeta = {
+  origin: string;
+  userAgent: string;
+};
+
 export type ContactMailInput = {
   fields: ContactFields;
   attachments: AttachmentPlan;
   submittedAt: string;
+  requestMeta?: ContactRequestMeta;
 };
 
 export type MailResult = { ok: true } | { ok: false; reason: string };
@@ -25,16 +33,18 @@ function serviceLabel(value: string): string {
   );
 }
 
-function toBase64(bytes: Uint8Array): string {
-  return Buffer.from(bytes).toString("base64");
+function sanitizeMeta(value: string | undefined, max = 200): string {
+  const cleaned = (value ?? "").replace(/[\r\n\u0000]+/g, " ").trim();
+  if (!cleaned) return "—";
+  return cleaned.length > max ? `${cleaned.slice(0, max)}…` : cleaned;
 }
 
 export function buildContactMailText(input: ContactMailInput): {
   subject: string;
   text: string;
-  attachments: { filename: string; content: string }[];
+  attachments: { filename: string; content: Buffer; contentType: string }[];
 } {
-  const { fields, attachments, submittedAt } = input;
+  const { fields, attachments, submittedAt, requestMeta } = input;
   const phone = fields.phone ? normalizePhone(fields.phone) : "—";
   const email = fields.email || "—";
   const fileLines =
@@ -59,54 +69,103 @@ export function buildContactMailText(input: ContactMailInput): {
     "Anhänge:",
     fileLines,
     attachments.skippedNote ? `\n${attachments.skippedNote}` : "",
+    "",
+    "Technische Angaben:",
+    `Herkunft: ${sanitizeMeta(requestMeta?.origin, 120)}`,
+    `User-Agent: ${sanitizeMeta(requestMeta?.userAgent, 240)}`,
   ]
     .filter((line) => line !== "")
     .join("\n");
 
-  const subject = `Neue Anfrage: ${serviceLabel(fields.service)} — ${fields.name}`;
+  const subject = `Neue Anfrage über ghpolsterei.de – ${serviceLabel(fields.service)}`;
 
   const mailAttachments = attachments.attachToEmail
-    ? attachments.files.map((file) => ({
+    ? attachments.files.map((file: ValidatedFile) => ({
         filename: file.filename,
-        content: toBase64(file.bytes),
+        content: Buffer.from(file.bytes),
+        contentType: file.mime,
       }))
     : [];
 
   return { subject, text, attachments: mailAttachments };
 }
 
-async function sendWithResend(input: ContactMailInput): Promise<MailResult> {
-  const apiKey = getResendApiKey();
-  const from = getContactFromEmail();
-  const to = getContactToEmail(site.email);
-
-  if (!apiKey || !from) {
-    return { ok: false, reason: "missing-resend-config" };
+function smtpFailureReason(error: unknown): string {
+  if (error && typeof error === "object" && "code" in error) {
+    const code = String((error as { code?: string }).code);
+    if (code === "EAUTH") return "smtp-auth";
+    if (
+      code === "ECONNECTION" ||
+      code === "ETIMEDOUT" ||
+      code === "ESOCKET" ||
+      code === "EDNS"
+    ) {
+      return "smtp-connection";
+    }
   }
+  return "smtp-send";
+}
 
+function recipientAccepted(
+  accepted: unknown,
+  rejected: unknown,
+  to: string,
+): boolean {
+  const acceptedList = Array.isArray(accepted)
+    ? accepted.map((entry) => String(entry).toLowerCase())
+    : [];
+  const rejectedList = Array.isArray(rejected)
+    ? rejected.map((entry) => String(entry).toLowerCase())
+    : [];
+  const target = to.toLowerCase();
+
+  if (rejectedList.some((entry) => entry.includes(target))) {
+    return false;
+  }
+  if (acceptedList.some((entry) => entry.includes(target))) {
+    return true;
+  }
+  return acceptedList.length > 0 && rejectedList.length === 0;
+}
+
+async function sendWithSmtp(
+  input: ContactMailInput,
+  config: SmtpConfig,
+): Promise<MailResult> {
   const { subject, text, attachments } = buildContactMailText(input);
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: input.fields.email || undefined,
+  let transporter: nodemailer.Transporter | undefined;
+
+  try {
+    transporter = nodemailer.createTransport({
+      host: config.host,
+      port: config.port,
+      secure: config.secure,
+      auth: {
+        user: config.user,
+        pass: config.password,
+      },
+    });
+
+    const info = await transporter.sendMail({
+      from: `GH Polsterei Website <${config.fromEmail}>`,
+      to: config.toEmail,
+      replyTo: input.fields.email || undefined,
       subject,
       text,
       attachments: attachments.length > 0 ? attachments : undefined,
-    }),
-  });
+    });
 
-  if (!response.ok) {
-    return { ok: false, reason: `resend-${response.status}` };
+    if (!recipientAccepted(info.accepted, info.rejected, config.toEmail)) {
+      return { ok: false, reason: "smtp-rejected" };
+    }
+
+    return { ok: true };
+  } catch (error) {
+    return { ok: false, reason: smtpFailureReason(error) };
+  } finally {
+    transporter?.close();
   }
-
-  return { ok: true };
 }
 
 function sendToConsole(input: ContactMailInput): MailResult {
@@ -122,15 +181,14 @@ function sendToConsole(input: ContactMailInput): MailResult {
 }
 
 export async function sendContactMail(input: ContactMailInput): Promise<MailResult> {
-  const apiKey = getResendApiKey();
-  const from = getContactFromEmail();
+  const config = getSmtpConfig();
 
-  if (apiKey && from) {
-    return sendWithResend(input);
+  if (config) {
+    return sendWithSmtp(input, config);
   }
 
-  if (isHostedDeploy()) {
-    return { ok: false, reason: "missing-resend-config" };
+  if (isHostedDeploy() || hasPartialSmtpConfig()) {
+    return { ok: false, reason: "missing-smtp-config" };
   }
 
   return sendToConsole(input);

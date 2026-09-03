@@ -129,6 +129,41 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
         </Container>
       </section>
 
+      <section
+        aria-labelledby="service-region-heading"
+        className="border-y border-border bg-surface py-12 sm:py-14"
+      >
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <h2
+              id="service-region-heading"
+              className="font-serif text-2xl font-semibold text-dark sm:text-3xl"
+            >
+              {service.regionContext.heading}
+            </h2>
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-muted sm:text-[1.0625rem]">
+              {service.regionContext.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+            {service.regionContext.links.length > 0 ? (
+              <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                {service.regionContext.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-[0.9375rem] font-medium text-gold-dark underline-offset-4 transition-colors hover:text-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold motion-reduce:transition-none"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        </Container>
+      </section>
+
       {service.workshopImages && service.workshopImages.length > 0 ? (
         <section
           aria-labelledby="workshop-insights-heading"

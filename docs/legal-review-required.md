@@ -13,9 +13,9 @@ This list is only what the business owner or a legal advisor should confirm befo
 
 - [ ] Endgültige juristische Freigabe der Datenschutzerklärung.
 - [ ] Hosting: Production-Ziel ist **Vercel**. Nach dem ersten Live-Deploy Region, Account und tatsächliche Log-Praxis erneut gegen den Text prüfen.
-- [ ] **Auftragsverarbeitung / DPA** in den Konten von Vercel, Cloudflare, Upstash und Resend abschließen bzw. bestätigen.
+- [ ] **Auftragsverarbeitung / DPA** in den Konten von Vercel, Cloudflare und Upstash abschließen bzw. bestätigen.
 - [ ] Standardvertragsklauseln / EU-US-Transfer der jeweiligen Anbieter im Account nachweisen.
-- [ ] Postfach bleibt `gh.polsterei@gmail.com` (Google) — andernfalls Empfänger und Datenschutztext anpassen.
+- [ ] Postfach ist `info@ghpolsterei.de` (cPanel-Hosting) — andernfalls Empfänger und Datenschutztext anpassen.
 - [ ] Speicherung von Anfrage-E-Mails und etwaigen Anhängen: internes Verfahren festlegen (keine pauschalen 30/90/365-Tage-Fristen im Code).
 - [ ] Aufsichtsbehörde LDI NRW wurde aus dem Standort Wesseling (NRW) abgeleitet. Bitte kurz bestätigen.
 
@@ -23,7 +23,7 @@ This list is only what the business owner or a legal advisor should confirm befo
 
 - [ ] Cloudflare Turnstile Site Key + Secret in Production.
 - [ ] Upstash Redis REST nur für Rate Limiting (kein Speichern von Formulardaten).
-- [ ] Resend-Absenderdomain verifiziert; `CONTACT_FROM_EMAIL` ist keine Gmail-Adresse.
+- [ ] SMTP (`mail.ghpolsterei.de`, Port 465) und `CONTACT_FROM_EMAIL` / `CONTACT_TO_EMAIL` in Production gesetzt.
 - [ ] Kein zusätzlicher Tracker, kein Cookie-Banner, solange der Stand in `docs/privacy-tech-audit.md` gilt.
 
 ## Inhalt, der bewusst nicht behauptet wird

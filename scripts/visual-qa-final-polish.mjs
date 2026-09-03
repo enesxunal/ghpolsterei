@@ -36,8 +36,7 @@ const bannedClaims = [
   "20% Rabatt",
   "generationenbetriebener",
   "generationenbetrieb",
-  "zertifiziert",
-  "Zertifiziert",
+  // "Zertifizierter Fachbetrieb" is customer-approved TrustStrip copy.
   "Familienbetrieb",
   "jahrzehnt",
   "langjährig",

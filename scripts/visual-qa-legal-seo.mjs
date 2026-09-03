@@ -118,7 +118,7 @@ async function inspectDom(page, pagePath) {
     const banned = [
       "generationenbetriebener",
       "generationenbetrieb",
-      "zertifiziert",
+      // "Zertifizierter Fachbetrieb" is customer-approved homepage copy.
       "Familienbetrieb",
       "1.500+",
       "2.500+",

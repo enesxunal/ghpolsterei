@@ -37,11 +37,11 @@ Documented for privacy copy; not trackers:
 | --- | --- | --- |
 | **Cloudflare Turnstile** | `siteverify` with token and optional `remoteip`. | Challenge token, IP if known. Not the form message. |
 | **Upstash Redis** | Rate limit key `contact-rl:${ip}` with INCR + EXPIRE. TTL **10 minutes**. | IP (or `"unknown"`) and a counter. Form body is not stored. |
-| **Resend** | `POST https://api.resend.com/emails` when API key + from-address are set. | Name, email, phone, service, message, timestamp; processed photos attached (client-optimized, ≤ 3.5 MB total). |
+| **cPanel SMTP** | Nodemailer to `SMTP_HOST` when host, port, secure flag, user, password, from- and to-address are set. | Name, email, phone, service, message, timestamp; processed photos attached (client-optimized, ≤ 3.5 MB total). |
 | **Vercel** | Planned production host. Request logs / platform telemetry as provided by Vercel. | Typical HTTP metadata (IP, URL, user-agent, timestamp). Retention is not hard-coded in this repo. |
-| **Gmail** | Default `CONTACT_TO_EMAIL` is `gh.polsterei@gmail.com`. | Mailbox of the workshop after Resend delivery. |
+| **Workshop mailbox** | Default `CONTACT_TO_EMAIL` is `info@ghpolsterei.de` on the cPanel mail host. | Mailbox of the workshop after SMTP delivery. |
 
-Local/dev without Upstash/Resend/Turnstile keys uses in-memory rate limiting, console mail, and Turnstile bypass. Hosted Vercel production fails closed without those credentials.
+Local/dev without Upstash/SMTP/Turnstile keys uses in-memory rate limiting, console mail, and Turnstile bypass. Hosted Vercel production fails closed without those credentials.
 
 ## Cookies
 

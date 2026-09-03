@@ -44,6 +44,11 @@ export type Service = {
   relatedServices: string[];
   layoutVariant: ServiceLayoutVariant;
   workshopImages?: ServiceWorkshopImage[];
+  regionContext: {
+    heading: string;
+    paragraphs: string[];
+    links: { href: string; label: string }[];
+  };
   legacyText: string;
 };
 
@@ -130,6 +135,16 @@ export const services: Service[] = [
     },
     relatedServices: ["aufpolstern", "neubau-restaurierung-gastronomie-sitzbaenke"],
     layoutVariant: "split-right",
+    regionContext: {
+      heading: "Region & Service",
+      paragraphs: [
+        "Die Werkstatt für den Neubezug von Polstermöbeln liegt in Wesseling. Sessel und Sofas aus Köln und dem Umland kommen in die Werkstatt — wir beziehen nicht mobil in der Wohnung. Ein Abhol- und Lieferservice ist nach Absprache möglich; für größere Stücke klären wir Transport und Termin vorab.",
+      ],
+      links: [
+        { href: "/polsterei-koeln", label: "Polsterei für Köln" },
+        { href: "/einsatzgebiet", label: "Einsatzgebiet" },
+      ],
+    },
     legacyText:
       "Neu Bezug von Polstermöbeln — Neubezug für zeitlose Eleganz. Experte für hochwertige und maßgeschneiderte Innenausstattung.",
   },
@@ -202,6 +217,16 @@ export const services: Service[] = [
     },
     relatedServices: ["sattlerei-autositze", "markisen"],
     layoutVariant: "split-left",
+    regionContext: {
+      heading: "Region & Service",
+      paragraphs: [
+        "Cabrioverdecke fertigen und beziehen wir in der Sattlerei in Wesseling. Fahrzeuge aus Bonn, dem Rhein-Sieg-Kreis und weiteren Teilen von NRW kommen nach Termin in die Werkstatt — nicht in eine Filiale vor Ort. Nach Absprache holen wir das Fahrzeug ab oder Sie bringen es zum vereinbarten Termin.",
+      ],
+      links: [
+        { href: "/polsterei-bonn", label: "Polsterei für Bonn" },
+        { href: "/einsatzgebiet", label: "Einsatzgebiet" },
+      ],
+    },
     workshopImages: [
       {
         src: "/images/projects/customer-2026/cabrio-verdeck-werkstatt-01.jpg",
@@ -300,6 +325,16 @@ export const services: Service[] = [
     },
     relatedServices: ["neu-bezug-von-polstermoebeln", "neubau-restaurierung-gastronomie-sitzbaenke"],
     layoutVariant: "stacked",
+    regionContext: {
+      heading: "Region & Service",
+      paragraphs: [
+        "Aufpolsterarbeiten entstehen in Wesseling. Kunden aus Brühl, Hürth, Frechen und dem übrigen Rhein-Erft-Kreis nutzen oft die kurze Distanz zur Werkstatt. Wer weiter entfernt wohnt, kann Abholung und Lieferung nach Absprache vereinbaren — die Polsterung selbst wird hier aufgebaut.",
+      ],
+      links: [
+        { href: "/polsterei-rhein-erft-kreis", label: "Rhein-Erft-Kreis" },
+        { href: "/einsatzgebiet", label: "Einsatzgebiet" },
+      ],
+    },
     legacyText:
       "Aufpolstern — Professionelles Aufpolstern für neuen Komfort.",
   },
@@ -372,6 +407,15 @@ export const services: Service[] = [
     },
     relatedServices: ["cabrio-neu-beziehen", "sattlerei-autositze"],
     layoutVariant: "offset",
+    regionContext: {
+      heading: "Region & Service",
+      paragraphs: [
+        "Markisen und Planen schneiden und nähen wir in Wesseling. Anfragen kommen aus dem Rheinland und aus anderen Teilen Nordrhein-Westfalens; der Zuschnitt bleibt in der Werkstatt. Aufmaß und Montage klären wir je nach Auftrag. Ein Lieferservice ist nach Absprache möglich.",
+      ],
+      links: [
+        { href: "/einsatzgebiet", label: "Einsatzgebiet Wesseling & NRW" },
+      ],
+    },
     legacyText:
       "Markisen — Markisen-Restaurierung; Planen für LKW/Anhänger. Markisen / PVC Plane auf der Startseite.",
   },
@@ -444,6 +488,16 @@ export const services: Service[] = [
     },
     relatedServices: ["neu-bezug-von-polstermoebeln", "aufpolstern"],
     layoutVariant: "wide-image",
+    regionContext: {
+      heading: "Region & Service",
+      paragraphs: [
+        "Gastronomie-Sitzbänke bauen und restaurieren wir in Wesseling. Betriebe in Köln und der näheren Region liefern Maße und Fotos oder vereinbaren einen Werkstatttermin. Wir haben keine weitere Werkstatt in der Stadt; Fertigung und Polsterung finden hier statt. Lieferung und Montage nach Absprache.",
+      ],
+      links: [
+        { href: "/polsterei-koeln", label: "Polsterei für Köln" },
+        { href: "/projekte", label: "Projekte" },
+      ],
+    },
     legacyText:
       "Neubau/Restaurierung von Gastronomie Sitzbänken — Maßgeschneiderte Sitzbänke für Gastronomie.",
   },
@@ -516,6 +570,16 @@ export const services: Service[] = [
     },
     relatedServices: ["cabrio-neu-beziehen", "markisen"],
     layoutVariant: "narrow-image",
+    regionContext: {
+      heading: "Region & Service",
+      paragraphs: [
+        "Autositze beziehen und restaurieren wir in der Sattlerei in Wesseling. Sitze oder Fahrzeuge kommen aus Bonn, Köln und dem Umland — die Arbeit selbst bleibt in der Werkstatt. Einen zweiten Standort gibt es nicht. Abholung und Rücklieferung sind nach Absprache möglich.",
+      ],
+      links: [
+        { href: "/polsterei-bonn", label: "Polsterei für Bonn" },
+        { href: "/leistungen/cabrio-neu-beziehen", label: "Cabrioverdecke" },
+      ],
+    },
     legacyText:
       "Sattlerei Arbeiten wie Autositze neu beziehen/Restaurieren — Autositze beziehen/restaurieren.",
   },

@@ -167,11 +167,15 @@ export async function processContactForm(
     fields: fieldsResult.data,
     attachments,
     submittedAt: new Date().toISOString(),
+    requestMeta: {
+      origin: request.headers.get("origin") ?? "",
+      userAgent: request.headers.get("user-agent") ?? "",
+    },
   });
 
   if (!mail.ok) {
     console.error("[contact] mail send failed", mail.reason);
-    return { status: 503, body: unavailableFail() };
+    return { status: 503, body: genericFail() };
   }
 
   return { status: 200, body: { ok: true } };

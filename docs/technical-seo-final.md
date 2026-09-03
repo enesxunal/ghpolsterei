@@ -98,6 +98,6 @@ Applied in `next.config.ts` to `/:path*`:
 ## Remaining production requirements
 
 - Set Vercel env vars from `.env.example` / `docs/contact-form-security.md`.
-- Confirm Turnstile, Resend domain, and Upstash Redis on the live project.
+- Confirm Turnstile, cPanel SMTP, and Upstash Redis on the live project.
 - Re-check Datenschutz hosting wording after the first Vercel deploy.
 - DNS and go-live are out of scope for this change set.

@@ -13,7 +13,7 @@ limits, and what must be configured before a Vercel production deploy.
 4. The server runs cheap checks first (size, origin, honeypot, rate limit,
    time trap), then Turnstile, then Zod + file validation.
 5. If everything passes, the workshop receives a plain-text email via the
-   mail adapter (Resend in production, console in local/dev).
+   mail adapter (cPanel SMTP in production, console in local/dev).
 6. The visitor sees a success state. There is **no auto-reply** to the sender
    in this version.
 
@@ -49,16 +49,19 @@ Security rejections do **not** name the layer that fired.
 
 Adapter in `src/lib/contact/mail.ts`:
 
-- **Resend** (`POST https://api.resend.com/emails`) when `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` are set.
-- **Console** logger in local/dev when those are missing.
-- On Vercel without credentials: fail closed. **No fake success.**
+- **SMTP / Nodemailer** when `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASSWORD`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL` are all set.
+- **Console** logger in local/dev when those SMTP vars are unset.
+- Partial SMTP config (some `SMTP_*` vars set, but not a complete valid set) fails closed even in local/dev. **No fake success.**
+- On Vercel without a complete SMTP config: fail closed. **No fake success.**
 
-`CONTACT_TO_EMAIL` defaults to `gh.polsterei@gmail.com` from `site.ts`.
-`CONTACT_FROM_EMAIL` must be a verified Resend domain (not Gmail).
-`reply_to` is set to the visitor email when provided.
+Use `SMTP_HOST=mail.ghpolsterei.de` (not the apex domain). The apex points at Vercel; `mail.ghpolsterei.de` still reaches the cPanel mail server. Port 465 requires `SMTP_SECURE=true`. TLS verification stays on.
+
+`From` is `GH Polsterei Website <CONTACT_FROM_EMAIL>`.
+`replyTo` is set to the visitor email when provided.
 
 The workshop mail includes name, email, phone, service, message, ISO timestamp,
-and attachment metadata. It does not include which spam check passed.
+attachment metadata, and sanitized request origin / User-Agent. It does not
+include which spam check passed. Body is plain text only.
 
 ## Uploads
 
@@ -85,7 +88,7 @@ returns HTTP 413 generic (client bypass).
 ### Attachment strategy (small site)
 
 No object storage. Files stay in memory for the request and are attached to
-the Resend (or local console) email. Processed totals stay under 3.5 MB, so
+the SMTP (or local console) email. Processed totals stay under 3.5 MB, so
 there is no “filenames only” fallback anymore.
 
 ### Vercel request-body limit
@@ -100,8 +103,12 @@ Set all of these in the Vercel project (Production + Preview):
 ```
 NEXT_PUBLIC_TURNSTILE_SITE_KEY
 TURNSTILE_SECRET_KEY
-RESEND_API_KEY
-CONTACT_TO_EMAIL=gh.polsterei@gmail.com
+SMTP_HOST=mail.ghpolsterei.de
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER
+SMTP_PASSWORD
+CONTACT_TO_EMAIL
 CONTACT_FROM_EMAIL
 CONTACT_FORM_SECRET
 UPSTASH_REDIS_REST_URL
@@ -115,10 +122,11 @@ Optional: `CONTACT_ALLOWED_ORIGIN` if the public URL is not `https://ghpolsterei
 - [ ] Cloudflare Turnstile widget created; site key + secret set; no classic CAPTCHA theme.
 - [ ] `CONTACT_FORM_SECRET` is a long random value (not the dev fallback).
 - [ ] Upstash Redis REST URL + token set (rate limit will not start without them).
-- [ ] Resend domain verified; `CONTACT_FROM_EMAIL` uses that domain.
-- [ ] `CONTACT_TO_EMAIL` delivers to `gh.polsterei@gmail.com` (or the inbox you choose).
+- [ ] SMTP host is `mail.ghpolsterei.de`; port 465 with `SMTP_SECURE=true`.
+- [ ] `CONTACT_FROM_EMAIL` and `CONTACT_TO_EMAIL` are the workshop mailbox.
+- [ ] `CONTACT_TO_EMAIL` delivers to `info@ghpolsterei.de` (or the inbox you choose).
 - [ ] Submit a real test from a phone and from desktop (including several photos).
 - [ ] Confirm honeypot/time-trap/Turnstile failures do not send mail.
 - [ ] `/datenschutz` page exists before launch (the form already links there).
-- [ ] Do not deploy with missing Turnstile/Redis/Resend and expect the form
+- [ ] Do not deploy with missing Turnstile/Redis/SMTP and expect the form
       to “just work” — hosted deploys fail closed on purpose.

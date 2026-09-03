@@ -24,7 +24,7 @@ export function ServicesSection() {
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={service.image}
-                  alt={service.name}
+                  alt={service.imageAlt}
                   fill
                   className="object-cover object-center transition-[transform,filter] duration-500 group-hover:brightness-[1.02] motion-reduce:transition-none"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

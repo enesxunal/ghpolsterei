@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   },
   description:
     "GH Polsterei in Wesseling — Polstermöbel, Sattlerei, Aufpolstern und mehr.",
+  verification: {
+    google: "MkygwiIgXUfcuyvGucwm2xshYVfAQ9sxEhLB88XwH_4",
+  },
 };
 
 export default function RootLayout({
