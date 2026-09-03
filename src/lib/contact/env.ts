@@ -45,14 +45,15 @@ function readSmtpEnv(): {
   fromEmail: string;
   toEmail: string;
 } {
+  const user = process.env.SMTP_USER?.trim() ?? "";
   return {
     host: process.env.SMTP_HOST?.trim() ?? "",
-    portRaw: process.env.SMTP_PORT?.trim() ?? "",
-    secureRaw: process.env.SMTP_SECURE?.trim() ?? "",
-    user: process.env.SMTP_USER?.trim() ?? "",
+    portRaw: process.env.SMTP_PORT?.trim() || "465",
+    secureRaw: process.env.SMTP_SECURE?.trim() || "true",
+    user,
     password: process.env.SMTP_PASSWORD?.trim() ?? "",
-    fromEmail: process.env.CONTACT_FROM_EMAIL?.trim() ?? "",
-    toEmail: process.env.CONTACT_TO_EMAIL?.trim() ?? "",
+    fromEmail: process.env.CONTACT_FROM_EMAIL?.trim() || user,
+    toEmail: process.env.CONTACT_TO_EMAIL?.trim() || "info@ghpolsterei.de",
   };
 }
 
@@ -97,6 +98,13 @@ export function getSmtpConfig(): SmtpConfig | undefined {
 /** True when some SMTP_* vars are set but the config is not complete/valid. */
 export function hasPartialSmtpConfig(): boolean {
   if (getSmtpConfig()) return false;
-  const env = readSmtpEnv();
-  return Boolean(env.host || env.portRaw || env.secureRaw || env.user || env.password);
+  return Boolean(
+    process.env.SMTP_HOST?.trim() ||
+      process.env.SMTP_PORT?.trim() ||
+      process.env.SMTP_SECURE?.trim() ||
+      process.env.SMTP_USER?.trim() ||
+      process.env.SMTP_PASSWORD?.trim() ||
+      process.env.CONTACT_FROM_EMAIL?.trim() ||
+      process.env.CONTACT_TO_EMAIL?.trim(),
+  );
 }
