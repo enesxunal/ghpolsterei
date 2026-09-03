@@ -144,17 +144,20 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="Upstash">
+      <LegalSection heading="Häufigkeitsbegrenzung">
         <p>
-          Zur Begrenzung der Absendehäufigkeit nutzen wir Upstash Redis (Upstash
-          Inc., USA), sofern die Production-Zugangsdaten hinterlegt sind. Dabei
-          wird ein Zähler zu einem technischen Schlüssel gespeichert, der die
-          IP-Adresse der Anfrage enthält. Der Inhalt des Formulars (Name,
-          Nachricht, Fotos) wird nicht in Redis abgelegt.
+          Um automatisierte oder übermäßige Absendungen zu erschweren, begrenzt
+          die Anwendung, wie oft das Kontaktformular von derselben technischen
+          Herkunft (in der Regel die IP-Adresse der Anfrage) in einem kurzen
+          Zeitraum genutzt werden kann. Dafür wird ein vorübergehender Zähler im
+          Arbeitsspeicher der Anwendung geführt. Der Inhalt des Formulars (Name,
+          Nachricht, Fotos) wird dabei nicht gespeichert.
         </p>
         <p>
-          Der Eintrag läuft nach {rateLimitMinutes} Minuten ab. Rechtsgrundlage
-          ist Art. 6 Abs. 1 lit. f DSGVO (Missbrauchsprävention).
+          Der Zähler entfällt nach {rateLimitMinutes} Minuten oder wenn die
+          laufende Instanz neu startet. Es handelt sich nicht um ein separates
+          Speichersystem und nicht um ein Nutzerprofil. Rechtsgrundlage ist
+          Art. 6 Abs. 1 lit. f DSGVO (Missbrauchsprävention).
         </p>
       </LegalSection>
 
@@ -174,7 +177,7 @@ export default function DatenschutzPage() {
 
       <LegalSection heading="Drittlandübermittlung">
         <p>
-          Vercel, Cloudflare und Upstash haben Sitz oder Verarbeitungsorte auch
+          Vercel und Cloudflare haben Sitz oder Verarbeitungsorte auch
           außerhalb der EU, insbesondere in den USA. Es gilt nicht, dass alle
           Daten in Deutschland verbleiben.
         </p>
@@ -194,10 +197,12 @@ export default function DatenschutzPage() {
           bestehen. Eine pauschale Frist in Tagen legen wir hier nicht fest.
         </p>
         <p>
-          Technisch bekannte Fristen: Rate-Limit-Einträge in Redis entfallen nach{" "}
-          {rateLimitMinutes} Minuten. Das Zeitfenster für ein gültiges
-          Formular-Token beträgt höchstens {formTokenHours} Stunden; das Token
-          selbst wird nicht als Nutzerprofil gespeichert.
+          Technisch bekannte Fristen: Zähler zur Absendehäufigkeit liegen nur
+          vorübergehend im Arbeitsspeicher und entfallen nach{" "}
+          {rateLimitMinutes} Minuten bzw. beim Neustart der Instanz. Das
+          Zeitfenster für ein gültiges Formular-Token beträgt höchstens{" "}
+          {formTokenHours} Stunden; das Token selbst wird nicht als Nutzerprofil
+          gespeichert.
         </p>
         <p>
           Anfragen, die als E-Mail bei uns eingehen, folgen der Aufbewahrung des

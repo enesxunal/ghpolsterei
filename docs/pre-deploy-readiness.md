@@ -18,8 +18,6 @@ SMTP_PASSWORD
 CONTACT_TO_EMAIL
 CONTACT_FROM_EMAIL
 CONTACT_FORM_SECRET         # long random value, not the local fallback
-UPSTASH_REDIS_REST_URL
-UPSTASH_REDIS_REST_TOKEN
 ```
 
 Optional: `CONTACT_ALLOWED_ORIGIN` if the public origin is not `https://ghpolsterei.de`.

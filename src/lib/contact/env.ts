@@ -21,13 +21,6 @@ export function getTurnstileSecret(): string | undefined {
   return key || undefined;
 }
 
-export function getUpstashConfig(): { url: string; token: string } | undefined {
-  const url = process.env.UPSTASH_REDIS_REST_URL?.trim();
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN?.trim();
-  if (!url || !token) return undefined;
-  return { url, token };
-}
-
 export function getContactToEmail(fallback: string): string {
   return process.env.CONTACT_TO_EMAIL?.trim() || fallback;
 }

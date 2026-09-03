@@ -78,11 +78,7 @@ export async function processContactForm(
   }
 
   const ip = getRequestIp(request);
-  const rate = await checkContactRateLimit(ip);
-  if (rate.backend === "unavailable") {
-    log503("RATE_LIMIT_UNAVAILABLE");
-    return { status: 503, body: unavailableFail() };
-  }
+  const rate = checkContactRateLimit(ip);
   if (!rate.allowed) {
     return { status: 429, body: rateLimitFail() };
   }

@@ -26,7 +26,7 @@ rendered as HTML (plain-text mail only; header breaks stripped).
 | --- | --- | --- |
 | Honeypot `company_website` | Hidden from people. If filled, mail is **not** sent. | HTTP 200 `{ ok: true }` (silent) |
 | Time trap | Token issued at render. Reject if submitted in under 2.5s or older than 24h. HMAC-signed so clients cannot forge a delay. | Generic error |
-| Rate limit | IP-based. Hosted: 5 / 10 minutes via Upstash Redis. Local/dev: 30 / 10 minutes in memory. | Generic error (HTTP 429) |
+| Rate limit | IP-based. Hosted: 5 / 10 minutes. Local/dev: 30 / 10 minutes. In-process memory (`contact-rl:${ip}`). | Generic error (HTTP 429) |
 | Cloudflare Turnstile | `interaction-only` widget. Token verified at `https://challenges.cloudflare.com/turnstile/v0/siteverify`. Secret never sent to the client. | Generic error |
 | Payload limits | `Content-Length` over 22 MB rejected. Message max 4000 characters. | Generic / validation error |
 | Origin check | Optional `Origin` must match the site, localhost, or `VERCEL_URL`. | Generic error |
@@ -41,9 +41,9 @@ Security rejections do **not** name the layer that fired.
 
 ### Rate limit env behaviour
 
-- `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` present: Redis INCR + EXPIRE.
-- Missing in local/dev: in-memory `Map` (single process only — not production-safe).
-- Missing on Vercel: fail closed. Memory is never treated as hosted production security.
+- Always in-process memory. No Redis or Upstash.
+- Hosted production uses the stricter 5 / 10 minutes cap. Local/dev uses 30 / 10 minutes.
+- Counters are per instance and reset when the instance restarts. They are not a shared store.
 
 ## Mail provider
 
@@ -111,8 +111,6 @@ SMTP_PASSWORD
 CONTACT_TO_EMAIL
 CONTACT_FROM_EMAIL
 CONTACT_FORM_SECRET
-UPSTASH_REDIS_REST_URL
-UPSTASH_REDIS_REST_TOKEN
 ```
 
 Optional: `CONTACT_ALLOWED_ORIGIN` if the public URL is not `https://ghpolsterei.de`.
@@ -121,12 +119,11 @@ Optional: `CONTACT_ALLOWED_ORIGIN` if the public URL is not `https://ghpolsterei
 
 - [ ] Cloudflare Turnstile widget created; site key + secret set; no classic CAPTCHA theme.
 - [ ] `CONTACT_FORM_SECRET` is a long random value (not the dev fallback).
-- [ ] Upstash Redis REST URL + token set (rate limit will not start without them).
 - [ ] SMTP host is `mail.ghpolsterei.de`; port 465 with `SMTP_SECURE=true`.
 - [ ] `CONTACT_FROM_EMAIL` and `CONTACT_TO_EMAIL` are the workshop mailbox.
 - [ ] `CONTACT_TO_EMAIL` delivers to `info@ghpolsterei.de` (or the inbox you choose).
 - [ ] Submit a real test from a phone and from desktop (including several photos).
 - [ ] Confirm honeypot/time-trap/Turnstile failures do not send mail.
 - [ ] `/datenschutz` page exists before launch (the form already links there).
-- [ ] Do not deploy with missing Turnstile/Redis/SMTP and expect the form
+- [ ] Do not deploy with missing Turnstile/SMTP and expect the form
       to “just work” — hosted deploys fail closed on purpose.
