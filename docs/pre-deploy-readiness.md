@@ -8,8 +8,6 @@
 Set before the first live deploy. Hosted production **fails closed** if these are missing.
 
 ```
-NEXT_PUBLIC_TURNSTILE_SITE_KEY
-TURNSTILE_SECRET_KEY
 SMTP_HOST=mail.ghpolsterei.de
 SMTP_PORT=465
 SMTP_SECURE=true
@@ -41,7 +39,7 @@ Vercel function body cap is 4.5 MB. Client compression plus the 4 MB app ceiling
 - `X-Frame-Options: DENY`
 - `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()`
 - `poweredByHeader: false` — no `X-Powered-By`
-- CSP not shipped (Turnstile + Next.js inline scripts)
+- CSP not shipped (Next.js inline scripts)
 
 ## Sitemap / robots
 
@@ -53,7 +51,7 @@ Vercel function body cap is 4.5 MB. Client compression plus the 4 MB app ceiling
 
 ## Trackers / cookies
 
-No analytics, pixels, or first-party cookies. No cookie banner. Client third party: Cloudflare Turnstile on `/kontakt` only. See `docs/privacy-tech-audit.md`.
+No analytics, pixels, or first-party cookies. No cookie banner. No client-side third-party scripts on `/kontakt`. See `docs/privacy-tech-audit.md`.
 
 ## Legal review reminders
 
@@ -92,7 +90,6 @@ INP was not reported in these runs. Mobile LCP is dominated by large legacy/serv
 ## DNS / preview checklist (before pointing the domain)
 
 - [ ] Preview deploy with all ENV set
-- [ ] Turnstile works on the preview host
 - [ ] SMTP delivers a real form mail with a photo
 - [ ] `/datenschutz` 200, contact privacy link works
 - [ ] Canonical URLs are `https://ghpolsterei.de/...` (not the Vercel URL)

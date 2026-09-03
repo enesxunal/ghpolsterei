@@ -129,21 +129,6 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="Cloudflare Turnstile">
-        <p>
-          Zum Schutz des Kontaktformulars vor Bots setzen wir Cloudflare
-          Turnstile der Cloudflare, Inc. (USA) ein. Turnstile prüft, ob die
-          Anfrage von einem Menschen stammt. Dafür können technische Signale
-          wie IP-Adresse, User-Agent, TLS- und Browser-Eigenschaften verarbeitet
-          werden.
-        </p>
-        <p>
-          Turnstile liest den Inhalt Ihrer Nachricht nicht. Die Einbindung dient
-          ausschließlich der Spam- und Bot-Abwehr sowie der Sicherheit des
-          Formulars. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
-        </p>
-      </LegalSection>
-
       <LegalSection heading="Häufigkeitsbegrenzung">
         <p>
           Um automatisierte oder übermäßige Absendungen zu erschweren, begrenzt
@@ -177,9 +162,9 @@ export default function DatenschutzPage() {
 
       <LegalSection heading="Drittlandübermittlung">
         <p>
-          Vercel und Cloudflare haben Sitz oder Verarbeitungsorte auch
-          außerhalb der EU, insbesondere in den USA. Es gilt nicht, dass alle
-          Daten in Deutschland verbleiben.
+          Vercel hat Sitz oder Verarbeitungsorte auch außerhalb der EU,
+          insbesondere in den USA. Es gilt nicht, dass alle Daten in Deutschland
+          verbleiben.
         </p>
         <p>
           Soweit eine Übermittlung in ein Drittland erfolgt, stützt sie sich auf
@@ -240,11 +225,6 @@ export default function DatenschutzPage() {
           Diese Website setzt keine eigenen nicht-essentiellen Cookies und keine
           Analyse- oder Werbe-Tracker ein. Es gibt kein Cookie-Banner, weil keine
           entsprechenden Tracking-Dienste eingebunden sind.
-        </p>
-        <p>
-          Cloudflare Turnstile kann für die Bot-Prüfung technische Daten im
-          Browser verarbeiten. Das dient der Sicherheit des Formulars, nicht der
-          Reichweitenmessung oder Werbung.
         </p>
       </LegalSection>
     </LegalShell>

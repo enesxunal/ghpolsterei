@@ -6,16 +6,13 @@ import {
   PAYLOAD_TOO_LARGE,
   RATE_LIMIT_MESSAGE,
   TIMESTAMP_FIELD,
-  TURNSTILE_FIELD,
   UNAVAILABLE_MESSAGE,
 } from "@/lib/contact/constants";
-import { getTurnstileSiteKey, isHostedDeploy } from "@/lib/contact/env";
 import { sendContactMail } from "@/lib/contact/mail";
 import { isAllowedOrigin } from "@/lib/contact/origin";
 import { checkContactRateLimit, getRequestIp } from "@/lib/contact/rate-limit";
 import { planEmailAttachments } from "@/lib/contact/storage";
 import { verifyFormTimestampToken } from "@/lib/contact/time-trap";
-import { verifyTurnstileToken } from "@/lib/contact/turnstile";
 import {
   parsePrivacy,
   validateContactFields,
@@ -89,23 +86,6 @@ export async function processContactForm(
     return { status: 503, body: unavailableFail() };
   }
   if (timestamp === "rejected") {
-    return { status: 400, body: genericFail() };
-  }
-
-  if (isHostedDeploy() && !getTurnstileSiteKey()) {
-    log503("TURNSTILE_SITE_KEY_MISSING");
-    return { status: 503, body: unavailableFail() };
-  }
-
-  const turnstile = await verifyTurnstileToken(
-    readString(formData, TURNSTILE_FIELD) || null,
-    ip,
-  );
-  if (turnstile === "unavailable") {
-    log503("TURNSTILE_SECRET_MISSING");
-    return { status: 503, body: unavailableFail() };
-  }
-  if (turnstile === "rejected") {
     return { status: 400, body: genericFail() };
   }
 

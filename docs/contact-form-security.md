@@ -11,7 +11,7 @@ limits, and what must be configured before a Vercel production deploy.
    message, privacy consent, optional photos).
 3. The browser posts `multipart/form-data` to `POST /api/contact`.
 4. The server runs cheap checks first (size, origin, honeypot, rate limit,
-   time trap), then Turnstile, then Zod + file validation.
+   time trap), then Zod + file validation.
 5. If everything passes, the workshop receives a plain-text email via the
    mail adapter (cPanel SMTP in production, console in local/dev).
 6. The visitor sees a success state. There is **no auto-reply** to the sender
@@ -27,17 +27,10 @@ rendered as HTML (plain-text mail only; header breaks stripped).
 | Honeypot `company_website` | Hidden from people. If filled, mail is **not** sent. | HTTP 200 `{ ok: true }` (silent) |
 | Time trap | Token issued at render. Reject if submitted in under 2.5s or older than 24h. HMAC-signed so clients cannot forge a delay. | Generic error |
 | Rate limit | IP-based. Hosted: 5 / 10 minutes. Local/dev: 30 / 10 minutes. In-process memory (`contact-rl:${ip}`). | Generic error (HTTP 429) |
-| Cloudflare Turnstile | `interaction-only` widget. Token verified at `https://challenges.cloudflare.com/turnstile/v0/siteverify`. Secret never sent to the client. | Generic error |
 | Payload limits | `Content-Length` over 22 MB rejected. Message max 4000 characters. | Generic / validation error |
 | Origin check | Optional `Origin` must match the site, localhost, or `VERCEL_URL`. | Generic error |
 
 Security rejections do **not** name the layer that fired.
-
-### Turnstile env behaviour
-
-- Keys present: always verified.
-- Keys missing in **local/dev** (`VERCEL` unset): controlled bypass so the form can be exercised.
-- Keys missing on a **Vercel deploy** (`VERCEL=1` and `NODE_ENV=production`): fail closed. The form returns “unavailable”. Silent bypass is not allowed.
 
 ### Rate limit env behaviour
 
@@ -101,8 +94,6 @@ app ceiling keep the multipart POST under that cap.
 Set all of these in the Vercel project (Production + Preview):
 
 ```
-NEXT_PUBLIC_TURNSTILE_SITE_KEY
-TURNSTILE_SECRET_KEY
 SMTP_HOST=mail.ghpolsterei.de
 SMTP_PORT=465
 SMTP_SECURE=true
@@ -117,13 +108,12 @@ Optional: `CONTACT_ALLOWED_ORIGIN` if the public URL is not `https://ghpolsterei
 
 ## Production checklist
 
-- [ ] Cloudflare Turnstile widget created; site key + secret set; no classic CAPTCHA theme.
 - [ ] `CONTACT_FORM_SECRET` is a long random value (not the dev fallback).
 - [ ] SMTP host is `mail.ghpolsterei.de`; port 465 with `SMTP_SECURE=true`.
 - [ ] `CONTACT_FROM_EMAIL` and `CONTACT_TO_EMAIL` are the workshop mailbox.
 - [ ] `CONTACT_TO_EMAIL` delivers to `info@ghpolsterei.de` (or the inbox you choose).
 - [ ] Submit a real test from a phone and from desktop (including several photos).
-- [ ] Confirm honeypot/time-trap/Turnstile failures do not send mail.
+- [ ] Confirm honeypot/time-trap failures do not send mail.
 - [ ] `/datenschutz` page exists before launch (the form already links there).
-- [ ] Do not deploy with missing Turnstile/SMTP and expect the form
+- [ ] Do not deploy with missing SMTP and expect the form
       to “just work” — hosted deploys fail closed on purpose.

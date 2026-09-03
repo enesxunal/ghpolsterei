@@ -36,7 +36,6 @@ export const ALLOWED_IMAGE_EXTENSIONS = new Set(["jpg", "jpeg", "png", "webp"]);
 
 export const HONEYPOT_FIELD = "company_website";
 export const TIMESTAMP_FIELD = "_t";
-export const TURNSTILE_FIELD = "cf-turnstile-response";
 export const PAYLOAD_TOO_LARGE = "payload-too-large";
 
 export const GENERIC_ERROR_MESSAGE =

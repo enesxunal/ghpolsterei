@@ -13,7 +13,7 @@ This list is only what the business owner or a legal advisor should confirm befo
 
 - [ ] Endgültige juristische Freigabe der Datenschutzerklärung.
 - [ ] Hosting: Production-Ziel ist **Vercel**. Nach dem ersten Live-Deploy Region, Account und tatsächliche Log-Praxis erneut gegen den Text prüfen.
-- [ ] **Auftragsverarbeitung / DPA** in den Konten von Vercel und Cloudflare abschließen bzw. bestätigen.
+- [ ] **Auftragsverarbeitung / DPA** im Vercel-Konto abschließen bzw. bestätigen.
 - [ ] Standardvertragsklauseln / EU-US-Transfer der jeweiligen Anbieter im Account nachweisen.
 - [ ] Postfach ist `info@ghpolsterei.de` (cPanel-Hosting) — andernfalls Empfänger und Datenschutztext anpassen.
 - [ ] Speicherung von Anfrage-E-Mails und etwaigen Anhängen: internes Verfahren festlegen (keine pauschalen 30/90/365-Tage-Fristen im Code).
@@ -21,7 +21,6 @@ This list is only what the business owner or a legal advisor should confirm befo
 
 ## Technik, die die Texte voraussetzen
 
-- [ ] Cloudflare Turnstile Site Key + Secret in Production.
 - [ ] SMTP (`mail.ghpolsterei.de`, Port 465) und `CONTACT_FROM_EMAIL` / `CONTACT_TO_EMAIL` in Production gesetzt.
 - [ ] Kein zusätzlicher Tracker, kein Cookie-Banner, solange der Stand in `docs/privacy-tech-audit.md` gilt.
 

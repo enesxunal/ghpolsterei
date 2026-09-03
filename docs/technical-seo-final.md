@@ -85,19 +85,19 @@ Applied in `next.config.ts` to `/:path*`:
 - `X-Frame-Options: DENY`
 - `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()`
 
-**Content-Security-Policy was not added.** Next.js hydration plus Cloudflare Turnstile (`https://challenges.cloudflare.com`) would need a carefully tested policy. A strict CSP that breaks `/api/contact` in production is worse than omitting it until Turnstile can be verified on a staging deploy.
+**Content-Security-Policy was not added.** Next.js hydration uses inline scripts. A strict CSP needs a carefully tested policy so it does not break the production app.
 
 ## Performance (quick pass, no redesign)
 
 - `next/image` is used for brand, hero, services, projects, and about photography; containers have `fill` + `sizes` or explicit width/height.
 - `priority` is limited to LCP-adjacent assets (home hero, header logo, kontakt hero, service detail hero, about hero).
 - Fonts: `next/font` with `display: "swap"` (DM Sans, Cormorant Garamond).
-- Client components: Header (mobile menu), ContactForm, Turnstile, Lightbox, ProjectsGallery. No extra marketing scripts.
+- Client components: Header (mobile menu), ContactForm, Lightbox, ProjectsGallery. No extra marketing scripts.
 - Remaining payload risk: large service PNGs inherited from the legacy site. Not resized in this pass (redesign freeze).
 
 ## Remaining production requirements
 
 - Set Vercel env vars from `.env.example` / `docs/contact-form-security.md`.
-- Confirm Turnstile and cPanel SMTP on the live project.
+- Confirm cPanel SMTP on the live project.
 - Re-check Datenschutz hosting wording after the first Vercel deploy.
 - DNS and go-live are out of scope for this change set.

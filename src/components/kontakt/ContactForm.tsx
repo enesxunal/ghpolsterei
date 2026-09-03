@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
-import { TurnstileWidget } from "@/components/kontakt/TurnstileWidget";
 import { buttonClassName } from "@/components/ui/ButtonLink";
 import { contactServiceOptions } from "@/data/contact";
 import {
@@ -10,7 +9,6 @@ import {
   GENERIC_ERROR_MESSAGE,
   HONEYPOT_FIELD,
   TIMESTAMP_FIELD,
-  TURNSTILE_FIELD,
   UNAVAILABLE_MESSAGE,
 } from "@/lib/contact/constants";
 import {
@@ -28,7 +26,6 @@ import type { ContactApiResponse } from "@/lib/contact/api-types";
 
 type ContactFormProps = {
   timestampToken: string | null;
-  turnstileSiteKey: string | null;
 };
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -92,7 +89,7 @@ function validateFields(values: {
   return errors;
 }
 
-export function ContactForm({ timestampToken, turnstileSiteKey }: ContactFormProps) {
+export function ContactForm({ timestampToken }: ContactFormProps) {
   const formId = useId();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const submitLock = useRef(false);
@@ -112,7 +109,6 @@ export function ContactForm({ timestampToken, turnstileSiteKey }: ContactFormPro
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<FormStatus>("idle");
   const [banner, setBanner] = useState<string | null>(null);
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const submitting = status === "submitting";
   const photosBusy = photosPreparing;
@@ -247,7 +243,6 @@ export function ContactForm({ timestampToken, turnstileSiteKey }: ContactFormPro
     body.set("privacy", privacy ? "true" : "false");
     body.set(HONEYPOT_FIELD, honeypot);
     if (timestampToken) body.set(TIMESTAMP_FIELD, timestampToken);
-    if (turnstileToken) body.set(TURNSTILE_FIELD, turnstileToken);
     for (const file of processedFiles) {
       body.append("photos", file);
     }
@@ -319,7 +314,6 @@ export function ContactForm({ timestampToken, turnstileSiteKey }: ContactFormPro
             setPhotosPreparing(false);
             setErrors({});
             setBanner(null);
-            setTurnstileToken("");
             setStatus("idle");
           }}
         >
@@ -649,10 +643,6 @@ export function ContactForm({ timestampToken, turnstileSiteKey }: ContactFormPro
           </p>
         ) : null}
       </div>
-
-      {turnstileSiteKey ? (
-        <TurnstileWidget siteKey={turnstileSiteKey} onToken={setTurnstileToken} />
-      ) : null}
 
       <div className="pt-2">
         <button

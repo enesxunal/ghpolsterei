@@ -67,7 +67,7 @@
   {
     "viewport": "client-large-jpeg-optimize",
     "issues": [],
-    "largeSize": 7356856
+    "largeSize": 7355090
   },
   {
     "viewport": "client-reject-over-8mb",
@@ -117,6 +117,21 @@
   },
   {
     "viewport": "api-time-trap",
+    "status": 400,
+    "issues": []
+  },
+  {
+    "viewport": "api-valid-submit",
+    "status": 200,
+    "issues": []
+  },
+  {
+    "viewport": "api-bad-origin",
+    "status": 400,
+    "issues": []
+  },
+  {
+    "viewport": "api-invalid-fields",
     "status": 400,
     "issues": []
   }

@@ -111,7 +111,7 @@ Each page has a unique `meta description`, `canonical` URL, and OpenGraph basics
 
 ## Deferred (out of scope)
 
-- `/kontakt` page, contact form, Turnstile, rate-limit, mail delivery
+- `/kontakt` page, contact form, rate-limit, mail delivery
 - Impressum / Datenschutz refresh
 - Deploy / production DNS
 - `middleware` → Next.js 16 `proxy` migration (deprecation warning only)

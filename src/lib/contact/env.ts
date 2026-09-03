@@ -11,16 +11,6 @@ export function isHostedDeploy(): boolean {
   return isVercelDeploy() && isProductionRuntime();
 }
 
-export function getTurnstileSiteKey(): string | undefined {
-  const key = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim();
-  return key || undefined;
-}
-
-export function getTurnstileSecret(): string | undefined {
-  const key = process.env.TURNSTILE_SECRET_KEY?.trim();
-  return key || undefined;
-}
-
 export function getContactToEmail(fallback: string): string {
   return process.env.CONTACT_TO_EMAIL?.trim() || fallback;
 }

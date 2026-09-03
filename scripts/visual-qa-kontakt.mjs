@@ -80,8 +80,8 @@ function validFormData(overrides = {}) {
   return body;
 }
 
-async function postContact(body) {
-  const response = await fetch(apiUrl, { method: "POST", body });
+async function postContact(body, headers = {}) {
+  const response = await fetch(apiUrl, { method: "POST", body, headers });
   let json = null;
   try {
     json = await response.json();
@@ -669,6 +669,58 @@ async function main() {
       issues: rejected
         ? []
         : [`Time trap should generic-fail, got ${JSON.stringify(fast.json)}`],
+    });
+  }
+
+  {
+    const okForm = await postContact(validFormData(), {
+      origin: "http://localhost:3000",
+      "x-forwarded-for": "198.51.100.41",
+    });
+    const ok =
+      okForm.status === 200 &&
+      okForm.json?.ok === true &&
+      !JSON.stringify(okForm.json).toLowerCase().includes("turnstile");
+    results.push({
+      viewport: "api-valid-submit",
+      status: okForm.status,
+      issues: ok
+        ? []
+        : [`Valid submit should be 200 without Turnstile, got ${JSON.stringify(okForm.json)}`],
+    });
+  }
+
+  {
+    const badOrigin = await postContact(validFormData(), {
+      origin: "https://evil.example",
+      "x-forwarded-for": "198.51.100.42",
+    });
+    results.push({
+      viewport: "api-bad-origin",
+      status: badOrigin.status,
+      issues:
+        badOrigin.status === 400
+          ? []
+          : [`Bad origin should be 400, got ${badOrigin.status} ${JSON.stringify(badOrigin.json)}`],
+    });
+  }
+
+  {
+    const invalid = await postContact(
+      validFormData({ name: "A", message: "kurz" }),
+      {
+        origin: "http://localhost:3000",
+        "x-forwarded-for": "198.51.100.43",
+      },
+    );
+    const ok =
+      invalid.status === 400 && invalid.json?.error === "validation";
+    results.push({
+      viewport: "api-invalid-fields",
+      status: invalid.status,
+      issues: ok
+        ? []
+        : [`Invalid fields should be 400 validation, got ${JSON.stringify(invalid.json)}`],
     });
   }
 

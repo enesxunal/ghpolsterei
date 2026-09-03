@@ -13,7 +13,9 @@
     "qa:projekte": "node scripts/visual-qa-projekte.mjs",
     "qa:redesign": "node scripts/visual-qa-redesign.mjs",
     "qa:final": "node scripts/visual-qa-final-polish.mjs",
-    "qa:legal": "node scripts/visual-qa-legal-seo.mjs"
+    "qa:legal": "node scripts/visual-qa-legal-seo.mjs",
+    "qa:contact-api": "npx tsx scripts/contact-api-smoke.ts",
+    "qa:contact-http": "node scripts/contact-http-smoke.mjs"
   },
   "dependencies": {
     "next": "16.3.3",

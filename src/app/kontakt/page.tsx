@@ -11,7 +11,6 @@ import { OpeningHours } from "@/components/ui/OpeningHours";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { contactAddressLine, contactPage } from "@/data/contact";
 import { site } from "@/data/site";
-import { getTurnstileSiteKey } from "@/lib/contact/env";
 import { createFormTimestampToken } from "@/lib/contact/time-trap";
 import { buildBreadcrumbJsonLd, buildLocalBusinessJsonLd } from "@/lib/jsonld";
 import { getMailtoHref, getTelHref, getWhatsAppHref } from "@/lib/links";
@@ -34,7 +33,6 @@ const localBusinessJsonLd = buildLocalBusinessJsonLd();
 
 export default function KontaktPage() {
   const timestampToken = createFormTimestampToken();
-  const turnstileSiteKey = getTurnstileSiteKey() ?? null;
 
   return (
     <>
@@ -184,10 +182,7 @@ export default function KontaktPage() {
                   {contactPage.formIntro}
                 </p>
                 <div className="mt-8">
-                  <ContactForm
-                    timestampToken={timestampToken}
-                    turnstileSiteKey={turnstileSiteKey}
-                  />
+                  <ContactForm timestampToken={timestampToken} />
                 </div>
               </div>
             </div>

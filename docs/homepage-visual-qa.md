@@ -83,7 +83,7 @@ npm run build  → pass (static / and /_not-found)
 
 - Inner routes (`/leistungsangebot`, `/projekte`, `/kontakt`, `/impressum`) — linked but not built yet (404).
 - Real project/service detail pages and SEO metadata per route.
-- Contact form backend, Turnstile, deploy pipeline.
+- Contact form backend, deploy pipeline.
 - Shortening long German service titles in content source (CSS hyphenation applied instead).
 - Next.js dev “N” indicator visible in menu screenshot corner (dev-only).
 
