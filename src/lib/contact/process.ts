@@ -30,6 +30,14 @@ function unavailableFail(): ContactApiFailure {
   return { ok: false, error: "unavailable", message: UNAVAILABLE_MESSAGE };
 }
 
+function log503(label: string, extra?: Record<string, unknown>) {
+  if (extra && Object.keys(extra).length > 0) {
+    console.error("[contact] 503", label, extra);
+    return;
+  }
+  console.error("[contact] 503", label);
+}
+
 function rateLimitFail(): ContactApiFailure {
   return { ok: false, error: "generic", message: RATE_LIMIT_MESSAGE };
 }
@@ -72,7 +80,7 @@ export async function processContactForm(
   const ip = getRequestIp(request);
   const rate = await checkContactRateLimit(ip);
   if (rate.backend === "unavailable") {
-    console.error("[contact] rate limiter unavailable on hosted deploy");
+    log503("RATE_LIMIT_UNAVAILABLE");
     return { status: 503, body: unavailableFail() };
   }
   if (!rate.allowed) {
@@ -81,7 +89,7 @@ export async function processContactForm(
 
   const timestamp = verifyFormTimestampToken(readString(formData, TIMESTAMP_FIELD));
   if (timestamp === "unavailable") {
-    console.error("[contact] form timestamp secret missing on hosted deploy");
+    log503("TIMESTAMP_SECRET_MISSING");
     return { status: 503, body: unavailableFail() };
   }
   if (timestamp === "rejected") {
@@ -89,7 +97,7 @@ export async function processContactForm(
   }
 
   if (isHostedDeploy() && !getTurnstileSiteKey()) {
-    console.error("[contact] Turnstile site key missing on hosted deploy");
+    log503("TURNSTILE_SITE_KEY_MISSING");
     return { status: 503, body: unavailableFail() };
   }
 
@@ -98,7 +106,7 @@ export async function processContactForm(
     ip,
   );
   if (turnstile === "unavailable") {
-    console.error("[contact] Turnstile secret missing on hosted deploy");
+    log503("TURNSTILE_SECRET_MISSING");
     return { status: 503, body: unavailableFail() };
   }
   if (turnstile === "rejected") {
@@ -154,7 +162,10 @@ export async function processContactForm(
   });
 
   if (!mail.ok) {
-    console.error("[contact] mail send failed", mail.reason);
+    log503("MAIL_SEND_FAILED", {
+      reason: mail.reason,
+      ...(mail.debug ?? {}),
+    });
     return { status: 503, body: genericFail() };
   }
 

@@ -24,7 +24,55 @@ export type ContactMailInput = {
   requestMeta?: ContactRequestMeta;
 };
 
-export type MailResult = { ok: true } | { ok: false; reason: string };
+export type MailResult =
+  | { ok: true }
+  | { ok: false; reason: string; debug?: SafeMailDebug };
+
+export type SafeMailDebug = {
+  name?: string;
+  code?: string;
+  command?: string;
+  responseCode?: number;
+  message?: string;
+};
+
+function sanitizeMailMessage(message: string | undefined): string | undefined {
+  if (!message) return undefined;
+  const collapsed = message.replace(/[\r\n\u0000]+/g, " ").trim();
+  const redacted = collapsed.replace(
+    /(pass(?:word)?|secret|token)\s*[:=]\s*\S+/gi,
+    "$1=[redacted]",
+  );
+  return redacted.length > 180 ? `${redacted.slice(0, 180)}…` : redacted;
+}
+
+export function safeMailDebug(error: unknown): SafeMailDebug {
+  const record =
+    error && typeof error === "object" ? (error as Record<string, unknown>) : undefined;
+  const name =
+    (typeof record?.name === "string" && record.name) ||
+    (error instanceof Error ? error.name : undefined);
+  const codeValue = record?.code;
+  const code =
+    typeof codeValue === "string" || typeof codeValue === "number"
+      ? String(codeValue)
+      : undefined;
+  const command = typeof record?.command === "string" ? record.command : undefined;
+  const responseCode =
+    typeof record?.responseCode === "number" ? record.responseCode : undefined;
+  const rawMessage =
+    (typeof record?.message === "string" && record.message) ||
+    (error instanceof Error ? error.message : undefined);
+  const message = sanitizeMailMessage(rawMessage);
+
+  return {
+    ...(name ? { name } : {}),
+    ...(code ? { code } : {}),
+    ...(command ? { command } : {}),
+    ...(responseCode !== undefined ? { responseCode } : {}),
+    ...(message ? { message } : {}),
+  };
+}
 
 function serviceLabel(value: string): string {
   return (
@@ -162,7 +210,11 @@ async function sendWithSmtp(
 
     return { ok: true };
   } catch (error) {
-    return { ok: false, reason: smtpFailureReason(error) };
+    return {
+      ok: false,
+      reason: smtpFailureReason(error),
+      debug: safeMailDebug(error),
+    };
   } finally {
     transporter?.close();
   }
