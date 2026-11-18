@@ -1,3 +1,5 @@
+import { projects } from "@/data/projects";
+
 export type ServiceSection = {
   heading: string;
   paragraphs: string[];
@@ -63,6 +65,16 @@ export const leistungenPage = {
       "Polstermöbel neu beziehen, Aufpolstern, Gastronomie-Sitzbänke, Markisen, Cabrio-Verdecke und Autositze: alle Leistungen der GH Polsterei in Wesseling im Überblick.",
   },
 } as const;
+
+// Only show images already identified as completed customer work.
+function getWorkshopImages(slugs: string[]): ServiceWorkshopImage[] {
+  return slugs.flatMap((slug) => {
+    const project = projects.find((item) => item.slug === slug);
+    return project
+      ? [{ src: project.image, alt: project.alt, width: project.width, height: project.height }]
+      : [];
+  });
+}
 
 export const services: Service[] = [
   {
@@ -145,6 +157,7 @@ export const services: Service[] = [
         { href: "/einsatzgebiet", label: "Einsatzgebiet" },
       ],
     },
+    workshopImages: getWorkshopImages(["ohrensessel-lederrestaurierung", "bugholzsessel-restaurierung", "stuhl-samt-restaurierung", "ergonomiestuhl-neubezug", "projekt-04", "projekt-11"]),
     legacyText:
       "Neu Bezug von Polstermöbeln — Neubezug für zeitlose Eleganz. Experte für hochwertige und maßgeschneiderte Innenausstattung.",
   },
@@ -335,6 +348,7 @@ export const services: Service[] = [
         { href: "/einsatzgebiet", label: "Einsatzgebiet" },
       ],
     },
+    workshopImages: getWorkshopImages(["projekt-07", "projekt-09"]),
     legacyText:
       "Aufpolstern — Professionelles Aufpolstern für neuen Komfort.",
   },
@@ -498,6 +512,7 @@ export const services: Service[] = [
         { href: "/projekte", label: "Projekte" },
       ],
     },
+    workshopImages: getWorkshopImages(["projekt-10", "projekt-12"]),
     legacyText:
       "Neubau/Restaurierung von Gastronomie Sitzbänken — Maßgeschneiderte Sitzbänke für Gastronomie.",
   },
@@ -580,6 +595,7 @@ export const services: Service[] = [
         { href: "/leistungen/cabrio-neu-beziehen", label: "Cabrioverdecke" },
       ],
     },
+    workshopImages: getWorkshopImages(["autositz-reparatur", "projekt-08", "projekt-05", "projekt-01", "projekt-06", "projekt-03"]),
     legacyText:
       "Sattlerei Arbeiten wie Autositze neu beziehen/Restaurieren — Autositze beziehen/restaurieren.",
   },
