@@ -6,7 +6,7 @@ import { BreadcrumbNav } from "@/components/leistungen/BreadcrumbNav";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { projects, projectsPage } from "@/data/projects";
+import { allProjects, projectsPage } from "@/data/projects";
 import { buildBreadcrumbJsonLd } from "@/lib/jsonld";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -69,7 +69,7 @@ export default function ProjektePage() {
               {projectsPage.subheading}. Klicken Sie auf ein Bild, um es zu
               vergrößern.
             </p>
-            <ProjectsGallery projects={projects} />
+            <ProjectsGallery projects={allProjects} />
           </Container>
         </section>
 

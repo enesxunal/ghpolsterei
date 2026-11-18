@@ -1,3 +1,5 @@
+import { services } from "@/data/services";
+
 export type Project = {
   id: number;
   slug: string;
@@ -211,6 +213,32 @@ export const projects: Project[] = [
     height: 1500,
   },
 ];
+
+// The public portfolio includes existing project photographs and all additional
+// customer references from the service pages. Keep the original project entries,
+// cover pictures and service galleries unchanged.
+export const allProjects: Project[] = (() => {
+  const seen = new Set(projects.map((project) => project.image));
+  const additional: Project[] = [];
+  let nextId = Math.max(...projects.map((project) => project.id)) + 1;
+
+  for (const service of services) {
+    for (const photo of service.workshopImages ?? []) {
+      if (seen.has(photo.src)) continue;
+      seen.add(photo.src);
+      additional.push({
+        id: nextId++,
+        slug: `${service.slug}-referenz-${additional.length + 1}`,
+        image: photo.src,
+        alt: photo.alt,
+        width: photo.width,
+        height: photo.height,
+      });
+    }
+  }
+
+  return [...projects, ...additional];
+})();
 
 export const projectsPage = {
   title: "Projekte",
