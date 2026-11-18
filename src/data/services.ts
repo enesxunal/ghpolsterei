@@ -145,6 +145,20 @@ export const services: Service[] = [
         { href: "/einsatzgebiet", label: "Einsatzgebiet" },
       ],
     },
+    workshopImages: [
+      {
+        src: "/images/services/references-2026/neu-bezug-von-polstermoebeln/behandlungsstuhl-polster-neubezug.jpg",
+        alt: "Schwarze gepolsterte Sitzflaeche eines Behandlungsstuhls",
+        width: 2016,
+        height: 954,
+      },
+      {
+        src: "/images/services/references-2026/neu-bezug-von-polstermoebeln/zwei-sessel-polster-neubezug-vorher-nachher.jpg",
+        alt: "Vorher-Nachher: zwei Sessel mit neuem schwarzem Stoffbezug",
+        width: 1760,
+        height: 2047,
+      },
+    ],
     legacyText:
       "Neu Bezug von Polstermöbeln — Neubezug für zeitlose Eleganz. Experte für hochwertige und maßgeschneiderte Innenausstattung.",
   },
@@ -416,6 +430,20 @@ export const services: Service[] = [
         { href: "/einsatzgebiet", label: "Einsatzgebiet Wesseling & NRW" },
       ],
     },
+    workshopImages: [
+      {
+        src: "/images/services/references-2026/markisen/terrasse-transparente-wetterschutzplane.jpg",
+        alt: "Transparente Wetterschutzplane mit Fenstern an einer Terrasse",
+        width: 1200,
+        height: 1600,
+      },
+      {
+        src: "/images/services/references-2026/markisen/terrassenueberdachung-schutzplanen.jpg",
+        alt: "Terrassenueberdachung mit transparenten Schutzplanen",
+        width: 1600,
+        height: 1200,
+      },
+    ],
     legacyText:
       "Markisen — Markisen-Restaurierung; Planen für LKW/Anhänger. Markisen / PVC Plane auf der Startseite.",
   },
@@ -498,6 +526,14 @@ export const services: Service[] = [
         { href: "/projekte", label: "Projekte" },
       ],
     },
+    workshopImages: [
+      {
+        src: "/images/services/references-2026/neubau-restaurierung-gastronomie-sitzbaenke/gastronomie-sitzbaenke-innenraum.jpg",
+        alt: "Gepolsterte Sitzbaenke mit Tischen in einem Gastronomieraum",
+        width: 2000,
+        height: 924,
+      },
+    ],
     legacyText:
       "Neubau/Restaurierung von Gastronomie Sitzbänken — Maßgeschneiderte Sitzbänke für Gastronomie.",
   },
@@ -580,6 +616,74 @@ export const services: Service[] = [
         { href: "/leistungen/cabrio-neu-beziehen", label: "Cabrioverdecke" },
       ],
     },
+    workshopImages: [
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/fahrzeug-seitenverkleidung-vorher-nachher.jpg",
+        alt: "Vorher-Nachher: neu bezogene Seitenverkleidung eines gelben Fahrzeugs",
+        width: 2048,
+        height: 2048,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/graue-autositze-neubezug-vorher-nachher.jpg",
+        alt: "Vorher-Nachher: aufbereitete graue Fahrzeugsitze",
+        width: 2048,
+        height: 2048,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/fahrzeug-sitzpolster-reparatur-vorher-nachher.jpg",
+        alt: "Vorher-Nachher: beschädigtes schwarzes Sitzpolster nach der Reparatur",
+        width: 2048,
+        height: 2048,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/autositz-seitenwange-reparatur-grau.jpg",
+        alt: "Vorher-Nachher: erneuerte graue Seitenwange eines Autositzes",
+        width: 2048,
+        height: 2038,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/schwarzes-polster-leder-neubezug.jpg",
+        alt: "Vorher-Nachher: kleines schwarzes Polster mit erneuertem Bezug",
+        width: 2048,
+        height: 2048,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/fahrzeugsitz-zweifarbig-neubezug.jpg",
+        alt: "Vorher-Nachher: zweifarbiger Fahrzeugsitz mit neuem Bezug",
+        width: 2048,
+        height: 2048,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/leder-rueckbank-neubezug-vorher-nachher.jpg",
+        alt: "Vorher-Nachher: neu bezogene Rueckbank mit Lederpolsterung",
+        width: 2048,
+        height: 2048,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/autositz-ledernaht-reparatur.jpg",
+        alt: "Vorher-Nachher: reparierte Ledernaht an der Seitenwange eines Autositzes",
+        width: 1559,
+        height: 1572,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/mittelarmlehne-lederrestaurierung.jpg",
+        alt: "Vorher-Nachher: restaurierte Mittelarmlehne aus hellem Fahrzeugleder",
+        width: 1600,
+        height: 1600,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/fahrzeughimmel-reparatur-vorher-nachher.webp",
+        alt: "Vorher-Nachher: erneuerter Dachhimmel im Fahrzeuginnenraum",
+        width: 2048,
+        height: 2048,
+      },
+      {
+        src: "/images/services/references-2026/sattlerei-autositze/autositz-seitenwange-leder-vorher-nachher.jpg",
+        alt: "Vorher-Nachher: instand gesetzte Seitenwange eines Ledersitzes",
+        width: 2048,
+        height: 2048,
+      },
+    ],
     legacyText:
       "Sattlerei Arbeiten wie Autositze neu beziehen/Restaurieren — Autositze beziehen/restaurieren.",
   },
