@@ -46,7 +46,9 @@ try {
       }
     });
 
-    await page.goto(`${baseUrl}/`, { waitUntil: "domcontentloaded" });
+    await page.goto(`${baseUrl}/`, { waitUntil: "load" });
+    // Wait for Next.js hydration before clicking a server-rendered button.
+    await page.waitForTimeout(1500);
     const gallery = page.locator("#startseite-projektgalerie");
     await gallery.locator("button").first().click();
     const modal = page.getByRole("dialog");
